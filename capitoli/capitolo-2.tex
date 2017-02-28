@@ -28,6 +28,30 @@ var template = "<h1>My name is {{name}} and i am {{age}} years old.</h1>";
 
 My name is Jon and i am 35 years old.
 \end{lstlisting}
+In questo esempio viene definito il template per rappresentare una lista di prodotti.
+\begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una sezione.]
+var view = prodotti: { 
+						"prodotti": [
+    							{ "name": "pane" },
+    							{ "name": "pasta" },
+    							{ "name": "biscotti" }
+  						]
+					};
+
+var template = "Lista della spesa:
+					<ul>
+						{{#prodotti}}
+						<li>{{name}}</li>
+						{{/prodotti}}
+					</ul>";
+
+// il risultato del rendering sarà:
+
+Lista della spesa:
+- pane
+- pasta
+- biscotti
+\end{lstlisting}
 
 \section{Mustache.js}
 
