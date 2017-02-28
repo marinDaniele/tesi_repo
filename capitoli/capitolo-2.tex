@@ -20,13 +20,13 @@ Si presentano nella forma "{{...}}" e possono contenere al loro interno un simbo
 Questi tag possono essere singoli, come nel caso delle variabili o doppi, cioè nella forma tag di apertura e tag di chiusura, come nel caso delle sezioni.
 Per capire bene il funzionamento che sta alla base di questi template engine è utile fare degli esempi.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una variabile.]
-var view = { name: Jon,	age: 35	};
+var view = { name: "Jon", age: 35};
 
-var template = "<h1>My name is {{name}} and my age is {{age}}.</h1>";
+var template = "<h1>My name is {{name}} and i am {{age}} years old.</h1>";
 
 // il risultato del rendering sarà:
 
-My name is Jon and my age is 35.
+My name is Jon and i am 35 years old.
 \end{lstlisting}
 
 \section{Mustache.js}
