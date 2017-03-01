@@ -14,36 +14,41 @@ Negli ultimi anni sono nate molte librerie che permettono la creazione di templa
 Queste librerie si sono evolute velocemente fino ad arrivare a permettere agli sviluppatori di creare intere User interface per applicazioni web, creare componenti riutilizzabili ed in qualche caso offrire funzionalità avanzate come il two-way binding.
 
 \subsection{I template con sintassi mustache}
-Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi formata da tag, che permettono di rappresentano variabili, sezioni, parziali ed altri elementi utili alla creazione in maniera dinamica del template.
-Questi particolari tag sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).
-Si presentano nella forma "{{...}}" e possono contenere al loro interno un simbolo, che identifica il tipo di tag e un parametro o una chiave appartenente all'oggetto JSON correlato al template.
-Questi tag possono essere singoli, come nel caso delle variabili o doppi, cioè nella forma tag di apertura e tag di chiusura, come nel caso delle sezioni.
-Per capire bene il funzionamento che sta alla base di questi template engine è utile fare degli esempi.
+Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione in maniera dinamica del template tramite l'inserimento di \textbf{tag}.\\
+Questi particolari \textbf{tag} sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).\\
+I tag si presentano nella forma "\{\{I P\}\}" dove I è un simbolo o una stringa ed identifica il tipo di tag, mentre P è un parametro o una chiave appartenente all'oggetto JSON correlato al template.\\
+Per l'inserimento di variabili o parziali il \textbf{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri sono presenti un \textbf{tag} di apertura ed uno di chiusura.\\
+Per capire meglio il funzionamento che sta alla base di questi template engine è utile fare degli esempi.
+\newpage
+Questo esempio mostra il rendering di due variabili.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una variabile.]
-var view = { name: "Jon", age: 35};
-
-var template = "<h1>My name is {{name}} and i am {{age}} years old.</h1>";
+// oggetto JSON contenente i dati
+var dati = { "name": "Jon", "age": 35};
+// template HTML con l'aggiunta del tag mustache
+var template = "<h1>Il mio nome è {{name}} e ho {{age}} anni.</h1>";
 
 // il risultato del rendering sarà:
 
-My name is Jon and i am 35 years old.
+Il mio nome è Jon e ho 35 anni.
 \end{lstlisting}
 In questo esempio viene definito il template per rappresentare una lista di prodotti.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una sezione.]
-var view = prodotti: { 
+// oggetto JSON contenente i dati
+var dati = prodotti: { 
 						"prodotti": [
     							{ "name": "pane" },
     							{ "name": "pasta" },
     							{ "name": "biscotti" }
   						]
 					};
-
-var template = "Lista della spesa:
+// template HTML con l'aggiunta del tag mustache
+var template = "<p>Lista della spesa:
 					<ul>
 						{{#prodotti}}
-						<li>{{name}}</li>
+							<li>{{name}}</li>
 						{{/prodotti}}
-					</ul>";
+					</ul>
+				</p>";
 
 // il risultato del rendering sarà:
 
@@ -54,9 +59,28 @@ Lista della spesa:
 \end{lstlisting}
 
 \section{Mustache.js}
-
+Mustache può essere considerato come il papà dei template system, è open-souce e logic-less e presenta implementazioni per i più famosi linguaggi di programmaione, come Java, Phyton, Ruby, PHP, JavaScript e molti altri.\\
+Mustache.js è un implementazione per JavaScript del template system Mustache.\\
+La libreria è molto leggera e versatile visto che permette il rendering sia lato server che lato client.\\
+Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano di creare la stringa HTML contenente il template renderizzato partendo dai dati JSON e dal template HTML e la seconda è opzionale e permette di preparare il template in modo da velocizzare l'operazione di render.\\
+Mustache.js viene definita logic-less perché non presenta nessun tipo di costrutto \textit{if-then-else} e loop come \textit{for} o \textit{do-while}
 \subsection{Come funziona}
-
+Il suo funzionamento è molto semplice.
+Per prima cosa bisogna includere la libreria all'interno della pagina HTML in cui si vuole inserire il template.
+\begin{lstlisting}[language=HTML, caption=Inclusione libreria Mustache.js nel file HTML.]
+<!doctype html>
+<html>
+  <head>
+    ...
+    <script type="text/javascript" src="mustache.js" ></script>
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+\end{lstlisting}
+In seguito all'inclusione basa richiamare la funzione \textit{render} passandogli i dati in formato JSON e il template HTML che dovrà visualizzarli.\\
+La funzione restituisce una stringa HTML rappresentante il template renderizzato e per inserirla nella pagina è neccessario utilizzare funzioni JavaScript come \textit{innerHTML} o funzioni offerte dalla libreria JQuery perché Mustache.js non offre nessuno strumento per modificare il DOM.
 \subsection{Pregi e difetti}
 
 \subsection{Prototipo}

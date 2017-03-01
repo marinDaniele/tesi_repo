@@ -3,9 +3,11 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {2.1}Esempio di template rappresentante una variabile.}{3}{lstlisting.2.1}
+\contentsline {lstlisting}{\numberline {2.1}Esempio di template rappresentante una variabile.}{4}{lstlisting.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {2.2}Esempio di template rappresentante una sezione.}{4}{lstlisting.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {2.3}Inclusione libreria Mustache.js nel file HTML.}{5}{lstlisting.2.3}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
