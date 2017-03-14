@@ -7,7 +7,7 @@
 \chapter{Librerie analizzate}
 \label{cap:librerie-analizzate}
 %**************************************************************
-In questo capitolo vengono messe a confronto varie librerie \textbf{JavaScript} che permettono la realizzazione di template HTML, ne vengono analizzati i pregi e i difetti per arrivare a descrivere i motivi che hanno portato all scelta della libreria utilizzata nel progetto.
+In questo capitolo vengono messe a confronto varie librerie \textbf{JavaScript} che permettono la realizzazione di template HTML, ne vengono analizzati i pregi e i difetti per arrivare a descrivere i motivi che hanno portato alla scelta della libreria utilizzata nel progetto.
 
 \section{Considerazioni generali}
 Negli ultimi anni sono nate molte librerie che permettono la creazione di template HTML che hanno portato notevoli vantaggi agli sviluppatori, offrendo loro un nuovo strumento che permette di creare modelli HTML per la rappresentazione dei dati e riutilizzarli all'interno di pagine differenti con una considerevole diminuzione del codice JavaScript e HTML che normalmente viene utilizzato per la modifica de DOM.
@@ -17,13 +17,13 @@ Queste librerie si sono evolute velocemente fino ad arrivare a permettere agli s
 Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione del template, tramite l'inserimento di \textbf{tag}.\\
 Questi particolari \textbf{tag} sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).\\
 I tag si presentano nella forma "\{\{I P\}\}" dove I è un simbolo o una stringa ed identifica il tipo di tag, mentre P è un parametro o una chiave appartenente all'oggetto JSON correlato al template.\\
-Per l'inserimento di variabili o parziali il \textbf{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri sono presenti un \textbf{tag} di apertura ed uno di chiusura.\\
+Per l'inserimento di variabili o parziali il \textbf{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri, sono presenti un \textbf{tag} di apertura ed uno di chiusura.\\
 Per capire meglio il funzionamento che sta alla base di questi template engine è utile fare degli esempi.
 \newpage
 Questo esempio mostra il rendering di due variabili.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una variabile.]
 // oggetto JSON contenente i dati
-var dati = { "name": "Jon", "age": 35};
+var dati = { name: "Jon", age: 35};
 // template HTML con l'aggiunta del tag mustache
 var template = "<h1>Il mio nome è {{name}} e ho {{age}} anni.</h1>";
 
@@ -34,13 +34,12 @@ Il mio nome è Jon e ho 35 anni.
 In questo esempio viene definito il template per rappresentare una lista di prodotti.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di template rappresentante una sezione.]
 // oggetto JSON contenente i dati
-var dati = prodotti: { 
-						"prodotti": [
-    							{ "name": "pane" },
-    							{ "name": "pasta" },
-    							{ "name": "biscotti" }
-  						]
-					};
+var dati = prodotti: [
+    						{ name: "pane" },
+    						{ name: "pasta" },
+    						{ name: "biscotti" }
+  					];
+  					
 // template HTML con l'aggiunta del tag mustache
 var template = "<p>Lista della spesa:
 					<ul>
@@ -59,7 +58,7 @@ Lista della spesa:
 \end{lstlisting}
 
 \section{Mustache.js}
-Mustache può essere considerato come il papà dei template system, è open-souce e logic-less e presenta implementazioni per i più famosi linguaggi di programmaione, come Java, Phyton, Ruby, PHP, JavaScript e molti altri.\\
+Mustache può essere considerato come il padre dei template system, è open-souce e logic-less e presenta implementazioni per i più famosi linguaggi di programmaione, come Java, Phyton, Ruby, PHP, JavaScript e molti altri.\\
 Mustache.js è un implementazione per JavaScript del template system Mustache.\\
 La libreria è molto leggera e versatile visto che permette il rendering sia lato server che lato client.\\
 Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano di creare la stringa HTML contenente il template renderizzato partendo dai dati JSON e dal template HTML e la seconda è opzionale e permette di preparare il template in modo da velocizzare l'operazione di render.\\
@@ -76,33 +75,31 @@ Uno dei pregi principali è sicuramente la semplicità e la leggerezza della lib
 Inoltre il set di tag offerti permette di creare template di una certa complessità e l'operazione di rendering è immediata.
 Come contro si può citare l'impossibilità di creare funzioni aggiuntive (helpers) per la gestione dei template, possibilità offerta da altre librerie e la totale mancanza di strumenti per la manipolazione del DOM e dei dati del template che costringe il programmatore ad appoggiarsi ad altre librerie.
 I template una volta renderizzati sono statici e un cambiamento nei dati non ha effetto sulla loro rappresentazione.
-\subsection{Prototipo}
-
 
 \FloatBarrier
 \section{HandlebarsJS}
-HandlebarsJS è una libreria costruita sopra a Mustache quindi offre tutte le funzionalità di quest'ultimo e aggiunge al normale set di tag anche costrutti di controllo come l'espressione \textit{if} e iteratori come \textit{each}.
-La libreria offre anche un set di metodi globali che permettono al programmatore di effettuare varie operazioni sul template e i suoi dati, più la possibilità di creare delle funzioni personalizzate che possono essere inserite in uno spazio globale e riutilizzate a piacere su diversi template.
+HandlebarsJS è una libreria costruita sopra a Mustache quindi offre tutte le funzionalità di quest'ultimo e aggiunge al normale set di tag anche costrutti di controllo come l'espressione \textit{if} e iteratori come \textit{each}.\\
+La libreria offre anche un set di metodi globali che permettono al programmatore di effettuare varie operazioni sul template e i suoi dati, in più la possibilità di creare delle funzioni personalizzate che possono essere inserite in uno spazio globale e riutilizzate a piacere su diversi template.\\
 Handlebare permette di precompilare il template e offre prestazioni migliori rispetto a Mustache.
 \subsection{Come funziona}
-Il funzionamento di HandlebarsJS è simile a quello di Mustache, avendo a disposizione l'oggetto JSON contenente i dati e il template, prima si compila il template tramite il metodo \textit{Handlebars.compile(template)}, il risultato della compilazione è una funzione che richiamata passandole come parametro l'oggetto JSON provvede ad interpolare i dati con il template e restituisce una stringa HTML che dovrà essere inserita nella pagina.
+Il funzionamento di HandlebarsJS è simile a quello di Mustache, avendo a disposizione l'oggetto JSON contenente i dati e il template, prima si compila il template tramite il metodo \textit{Handlebars.compile(template)}, il risultato della compilazione è una funzione che richiamata passandole come parametro l'oggetto JSON provvede ad interpolare i dati con il template e restituisce una stringa HTML che dovrà essere inserita nella pagina.\\
 Anche in questo caso l'inserimento del template nella pagina deve essere fatto utilizzando strumenti esterni alla libreria perché essa non offre funzioni adeguate.
 
 \subsection{Pregi e difetti}
 Anche per Handlebars la leggerezza della libreria e la velocità nel rendering è da considerare un pregio.
-Inoltre la possibilità di sfruttare un set di metodi e di poterne creare di propri risulta un vantaggio rispetto a Mustache.
-Come Mustache i template una volta creati sono statici e una modifica dei dati non causa un aggiornamento del template che deve essere nuovamente ricompilato
-\subsection{Prototipo}
-
+Inoltre la possibilità di sfruttare un set di metodi e di poterne creare di propri risulta un vantaggio rispetto a Mustache.\\
+Come Mustache i template una volta creati sono statici e una modifica dei dati non causa un aggiornamento del template che deve essere nuovamente ricompilato.
 
 \FloatBarrier
 \section{Ractive.js}
+Ractive.js è una libreria sviluppata al \href{https://www.theguardian.com}{theguardian.com} per creare \textbf{reactive interface} per il web, in modo semplice e efficente.\\
+Questa libreria offre anchessa la possibilità di creare template e interpolarli con dati di tipo JSON ma il suo funzionamento consiste in un approccio differente e l'insieme di strumenti offerti è di gran lunga superiore a quelli offerti dalle librerie studiate in precedenza.
+La libreria è compatibile con tutti i brawsers e offre un'ottima compatibilità con SVG e lo standard ES15.\\
+I template ottenuti con \textbf{Ractive.js} sono possono essere interattivi e offrono un \textit{binding} con il data model, quando i dati vengono modificati la libreria modifica in modo intelligente ed efficente il DOM del tempalte.
 
 \subsection{Come funziona}
 
 \subsection{Pregi e difetti}
-
-\subsection{Prototipo}
 
 
 \clearpage
