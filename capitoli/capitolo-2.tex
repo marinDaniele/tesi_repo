@@ -14,7 +14,7 @@ Negli ultimi anni sono nate molte librerie che permettono la creazione di templa
 Queste librerie si sono evolute velocemente fino ad arrivare a permettere agli sviluppatori di creare intere User interface per applicazioni web, creare componenti riutilizzabili ed in qualche caso offrire funzionalità avanzate come il two-way binding.
 
 \subsection{I template con sintassi mustache}
-Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione in maniera dinamica del template tramite l'inserimento di \textbf{tag}.\\
+Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione del template, tramite l'inserimento di \textbf{tag}.\\
 Questi particolari \textbf{tag} sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).\\
 I tag si presentano nella forma "\{\{I P\}\}" dove I è un simbolo o una stringa ed identifica il tipo di tag, mentre P è un parametro o una chiave appartenente all'oggetto JSON correlato al template.\\
 Per l'inserimento di variabili o parziali il \textbf{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri sono presenti un \textbf{tag} di apertura ed uno di chiusura.\\
@@ -65,34 +65,33 @@ La libreria è molto leggera e versatile visto che permette il rendering sia lat
 Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano di creare la stringa HTML contenente il template renderizzato partendo dai dati JSON e dal template HTML e la seconda è opzionale e permette di preparare il template in modo da velocizzare l'operazione di render.\\
 Mustache.js viene definita logic-less perché non presenta nessun tipo di costrutto \textit{if-then-else} e loop come \textit{for} o \textit{do-while}
 \subsection{Come funziona}
-Il suo funzionamento è molto semplice.
-Per prima cosa bisogna includere la libreria all'interno della pagina HTML in cui si vuole inserire il template.
-\begin{lstlisting}[language=HTML, caption=Inclusione libreria Mustache.js nel file HTML.]
-<!doctype html>
-<html>
-  <head>
-    ...
-    <script type="text/javascript" src="mustache.js" ></script>
-  </head>
-  <body>
-    ...
-  </body>
-</html>
-\end{lstlisting}
-In seguito all'inclusione basa richiamare la funzione \textit{render} passandogli i dati in formato JSON e il template HTML che dovrà visualizzarli.\\
-La funzione restituisce una stringa HTML rappresentante il template renderizzato e per inserirla nella pagina è neccessario utilizzare funzioni JavaScript come \textit{innerHTML} o funzioni offerte dalla libreria JQuery perché Mustache.js non offre nessuno strumento per modificare il DOM.
+Il suo funzionamento è molto semplice.\\
+Per prima cosa bisogna includere la libreria all'interno della pagina HTML in cui si vuole inserire il template.\\
+In seguito all'inclusione basta richiamare la funzione \textit{render} passandogli l'oggetto JSON contenente i dati e il template HTML che dovrà visualizzarli.\\
+Il template passato alla funzione sarà formato da codice HTML arricchito dai \textbf{tag} mustache necessari.\\
+La funzione restituisce una stringa rappresentante il template renderizzato che dovrà essere inserito nella pagina.\\
+Sfortunatamente Mustache.js non offre strumenti per la manipolazione del DOM per cui l'inserimento dovrà essere fatto dal programmatore utilizzando funzioni offerte dallo standard JavaScript o da altre librerie come JQuery.
 \subsection{Pregi e difetti}
-
+Uno dei pregi principali è sicuramente la semplicità e la leggerezza della libreria.
+Inoltre il set di tag offerti permette di creare template di una certa complessità e l'operazione di rendering è immediata.
+Come contro si può citare l'impossibilità di creare funzioni aggiuntive (helpers) per la gestione dei template, possibilità offerta da altre librerie e la totale mancanza di strumenti per la manipolazione del DOM e dei dati del template che costringe il programmatore ad appoggiarsi ad altre librerie.
+I template una volta renderizzati sono statici e un cambiamento nei dati non ha effetto sulla loro rappresentazione.
 \subsection{Prototipo}
 
 
 \FloatBarrier
 \section{HandlebarsJS}
-
+HandlebarsJS è una libreria costruita sopra a Mustache quindi offre tutte le funzionalità di quest'ultimo e aggiunge al normale set di tag anche costrutti di controllo come l'espressione \textit{if} e iteratori come \textit{each}.
+La libreria offre anche un set di metodi globali che permettono al programmatore di effettuare varie operazioni sul template e i suoi dati, più la possibilità di creare delle funzioni personalizzate che possono essere inserite in uno spazio globale e riutilizzate a piacere su diversi template.
+Handlebare permette di precompilare il template e offre prestazioni migliori rispetto a Mustache.
 \subsection{Come funziona}
+Il funzionamento di HandlebarsJS è simile a quello di Mustache, avendo a disposizione l'oggetto JSON contenente i dati e il template, prima si compila il template tramite il metodo \textit{Handlebars.compile(template)}, il risultato della compilazione è una funzione che richiamata passandole come parametro l'oggetto JSON provvede ad interpolare i dati con il template e restituisce una stringa HTML che dovrà essere inserita nella pagina.
+Anche in questo caso l'inserimento del template nella pagina deve essere fatto utilizzando strumenti esterni alla libreria perché essa non offre funzioni adeguate.
 
 \subsection{Pregi e difetti}
-
+Anche per Handlebars la leggerezza della libreria e la velocità nel rendering è da considerare un pregio.
+Inoltre la possibilità di sfruttare un set di metodi e di poterne creare di propri risulta un vantaggio rispetto a Mustache.
+Come Mustache i template una volta creati sono statici e una modifica dei dati non causa un aggiornamento del template che deve essere nuovamente ricompilato
 \subsection{Prototipo}
 
 
