@@ -38,11 +38,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.1}Come funziona}{6}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{6}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{7}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Confronto finale}{7}{section.2.5}
+\contentsline {section}{\numberline {2.5}Confronto finale}{8}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Libreria scelta}{7}{section.2.6}
+\contentsline {section}{\numberline {2.6}Libreria scelta}{8}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Strumenti e tecnologie legate alla libreria Ractive.js}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 

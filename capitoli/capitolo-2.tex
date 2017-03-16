@@ -64,16 +64,14 @@ La libreria è molto leggera e versatile visto che permette il rendering sia lat
 Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano di creare la stringa HTML contenente il template renderizzato partendo dai dati JSON e dal template HTML e la seconda è opzionale e permette di preparare il template in modo da velocizzare l'operazione di render.\\
 Mustache.js viene definita logic-less perché non presenta nessun tipo di costrutto \textit{if-then-else} e loop come \textit{for} o \textit{do-while}
 \subsection{Come funziona}
-Il suo funzionamento è molto semplice.\\
-Per prima cosa bisogna includere la libreria all'interno della pagina HTML in cui si vuole inserire il template.\\
-In seguito all'inclusione basta richiamare la funzione \textit{render} passandogli l'oggetto JSON contenente i dati e il template HTML che dovrà visualizzarli.\\
-Il template passato alla funzione sarà formato da codice HTML arricchito dai \textbf{tag} mustache necessari.\\
-La funzione restituisce una stringa rappresentante il template renderizzato che dovrà essere inserito nella pagina.\\
+Il suo funzionamento è molto semplice dato che la libreria offre solamente due metodi.\\
+Il metodo principale è \textit{Mustache.render(data, template)} che prendendo in ingresso il template HTML, con gli opportuni \textbf{tag} mustache, e i dati tramite oggetto JSON, restituisce una stringa risultato dall'interpolazione dei due elementi.\\
+La stringa risultante deve essere inserita all'interno della pagina tramite manipolazione del DOM.\\
 Sfortunatamente Mustache.js non offre strumenti per la manipolazione del DOM per cui l'inserimento dovrà essere fatto dal programmatore utilizzando funzioni offerte dallo standard JavaScript o da altre librerie come JQuery.
 \subsection{Pregi e difetti}
-Uno dei pregi principali è sicuramente la semplicità e la leggerezza della libreria.
-Inoltre il set di tag offerti permette di creare template di una certa complessità e l'operazione di rendering è immediata.
-Come contro si può citare l'impossibilità di creare funzioni aggiuntive (helpers) per la gestione dei template, possibilità offerta da altre librerie e la totale mancanza di strumenti per la manipolazione del DOM e dei dati del template che costringe il programmatore ad appoggiarsi ad altre librerie.
+Uno dei pregi principali è sicuramente la semplicità e la leggerezza della libreria.\\
+Inoltre la stesura dei template risulta intuitiva e semplificata dall'assenza di costrutti \textit{if-else} o cicli \textit{for} .\\
+Come contro si può citare l'impossibilità di creare funzioni aggiuntive per la gestione dei template, possibilità offerta da altre librerie e la totale mancanza di strumenti per la manipolazione del DOM e dei dati del template che costringe il programmatore ad appoggiarsi ad altre librerie.\\
 I template una volta renderizzati sono statici e un cambiamento nei dati non ha effetto sulla loro rappresentazione.
 
 \FloatBarrier
@@ -86,26 +84,52 @@ Il funzionamento di HandlebarsJS è simile a quello di Mustache, avendo a dispos
 Anche in questo caso l'inserimento del template nella pagina deve essere fatto utilizzando strumenti esterni alla libreria perché essa non offre funzioni adeguate.
 
 \subsection{Pregi e difetti}
-Anche per Handlebars la leggerezza della libreria e la velocità nel rendering è da considerare un pregio.
+Anche per Handlebars la leggerezza della libreria e la velocità nel rendering è da considerare un pregio.\\
 Inoltre la possibilità di sfruttare un set di metodi e di poterne creare di propri risulta un vantaggio rispetto a Mustache.\\
 Come Mustache i template una volta creati sono statici e una modifica dei dati non causa un aggiornamento del template che deve essere nuovamente ricompilato.
 
 \FloatBarrier
 \section{Ractive.js}
 Ractive.js è una libreria sviluppata al \href{https://www.theguardian.com}{theguardian.com} per creare \textbf{reactive interface} per il web, in modo semplice e efficente.\\
-Questa libreria offre anchessa la possibilità di creare template e interpolarli con dati di tipo JSON ma il suo funzionamento consiste in un approccio differente e l'insieme di strumenti offerti è di gran lunga superiore a quelli offerti dalle librerie studiate in precedenza.
-La libreria è compatibile con tutti i brawsers e offre un'ottima compatibilità con SVG e lo standard ES15.\\
-I template ottenuti con \textbf{Ractive.js} sono possono essere interattivi e offrono un \textit{binding} con il data model, quando i dati vengono modificati la libreria modifica in modo intelligente ed efficente il DOM del tempalte.
+Questa libreria utilizza la sintassi mustache al pari delle librerie viste in precedenza, quindi un template scritto per funzionare con Mustache.JS o HandlebarsJS può essere utilizzato anche con Ractive.js.\\
+Ractive.js arricchisce la sintassi mustache con nuovi strumenti come:
+\begin{itemize}
+	\item Array index;
+	\item Object iterator;
+	\item Special e restricted reference;
+	\item Espressioni;
+	\item Alias.
+\end{itemize}
+Oltre all'estensione della sintassi mustache, Ractive.js offre un set molto variegato di opzioni e metodi che possono essere utilizzati per modificare sia il DOM del template che i suoi dati,  per l'emissione e la ricezione di segnali e la gestione di animazioni.\\
+Tutti questi strumenti permettono la realizzazione di template interattivi e di una certa complessità, cosa che non è possibile fare utilizzando le librerie precedentemente descritte.\\
+La libreria è compatibile con tutti i browsers e offre un'ottima compatibilità con SVG e lo standard ES15.\\
+I template ottenuti con Ractive.js  offrono un \textbf{binding} tra la rappresentazione del template e  il data model, quando i dati vengono modificati la libreria modifica in modo intelligente ed efficente il DOM del tempalte.
 
 \subsection{Come funziona}
+Ractive.js utilizza un approccio differente rispetto alle librerie viste in precedenza.\\
+In particolare viene istanziato un oggetto di tipo Ractive che può essere inizializzato implementando varie opzioni tra quelle offerte dalla libreria.\\
+Le opzioni principali sono l'oggetto JSON contenente i dati, il template e l'elemento HTML a cui dovrà essere agganciato il template all'interno del DOM.\\
+Una volta istanziato l'oggetto viene creata nella \textbf{RAM} una rappresentazione virtuale del DOM (virtual DOM) e viene popolato il model con i dati contenuti nel JSON.\\
+In seguito viene renderizzata nel browser la rappresentazione del template interpolato con i dati ad esso relativi.\\
+Ia libreria si occupa di creare un legame tra il model e il virtual DOM.\\
+Nel momento in cui il model subisce variazioni viene effettuato un confronto tra DOM virtuali e nel caso in cui  venga rilevato un cambiamento la libreria si occupa di modificare il DOM reale in modo intelligente, cioè andando a modificare solamente l'elemento interessato e non tutta la pagina.\\
+Questa operazione viene effettuata  nella RAM confrontando la rappresentazione virtuale precedente con quella successiva alla modifica e quindi risulta molto veloce.
 
 \subsection{Pregi e difetti}
+I pregi di questa libreria risiedono nel fatto che offre un insieme completo di strumenti che permettono di gestire l'intero ciclo di vita di un template.\\
+L'arricchimento degli strumenti relativi alla sintassi mustache permette di inserire nel template campi che possono essere risultato di espressioni ed andare a variare sia i dati rappresentati che elementi del CSS, questo permette di creare template che cambiano dinamicamente in base al variare dei dati anche nell'aspetto grafico.\\
+Inoltre la possibilità di creare template che racchiudano HTML, CSS, e comportamento all'interno di un unico file, risulta molto comodo nello sviluppo di quest'ultimi.\\  
+Come contro, in relazione alle librerie viste in precedenza si può citare il peso maggiore in termini di risorse e la quantità di tempo neccessaria ad apprendere il funzionamento della libreria.
 
 
 \clearpage
 \section{Confronto finale}
-%\todo[inline]{Trovare un nome migliore}
+Mettendo a confronto le varie librerie si nota che \textit{Mustache.js} e \textit{HandlebarsJS} sono molto simili sia come supporto alla sintassi mustache che come approccio previsto per la creazione dei template.\\
+Nel confronto fra le due vince sicuramente \textit{HandlebarsJS} per il fatto che offre qualche strumento in più rispetto a \textit{Mustache.js} e la possibilità  di poter usufruire degli helpers lo rendono più completo e versatile.\\
+Ractive.js può essere considerata di una categoria superiore rispetto alle due librerie precedenti sia per il suo approccio nella gestione dei template che per il grande numero di funzionalità offerte, che permette la gestione del template in ogni suo aspetto.\\
+Questa libreria può essere utilizzata sia per la creazione di template semplici che molto complessi, inoltre è l'unica delle tre librerie ad offrire la possibilità di rendere interattivi i template tramite il data-binding e la gestione degli eventi.
+
 
 \FloatBarrier
 \section{Libreria scelta}
-
+Non essendo stati stabiliti vincoli sulla creazione dei template,  questi possono essere di diversa complessità, possono essere costruiti con linguaggio HTML o SVG e presentare elementi interattivi.\\ Queste condizioni hanno fatto ricadere la scelta sulla libreria Ractive.js, per le sue caratteristiche che la rendono uno strumento potente e versatile e che non limita le possibilità di sviluppo dei template.
