@@ -4,17 +4,39 @@
 % !TEX spellcheck = it-IT
 
 %**************************************************************
-\chapter{Strumenti e tecnologie legate alla libreria Ractive.js}
+\chapter{Strumenti e tecnologie utilizzati}
 \label{cap:strumenti-tecnologie}
 %**************************************************************
 \section{Linguaggi utilizzati}
+I template e l'editor creati durante il periodo di stage sono stati sviluppati per poter essere utilizzati all'interno di un browser, quindi i linguaggi utilizzati sono strettamente legati a questo ambiente.\\
+Questi linguaggi sono i seguenti:
+\begin{itemize}
+	\item Il linguaggio HTML è stato utilizzato per creare la struttura dei template e dell'editor;
+	\item Il linguaggio SVG è stato utilizzato nella creazione di template contenenti immagini vettoriali.
+	\item Il linguaggio CSS è stato utilizzato sia per definire la rappresentazione grafica dei template sia dell'editor;
+	\item Il linguaggio JavaScript è stato utilizzato per definire il comportamento dell'editor e per implementare varie funzionalità dei template;
+	\item La sintassi mustache è stata utilizzata all'interno dei template, sia  HTML che SVG. 
+\end{itemize}
 
-\section{ES2015}
+\section{JavaScript ES5}
+Il codice JavaScript prodotto durante lo sviluppo del progetto segue gli standard ES5 trattandosi della versione supportata dal JavaScriptCore e compatibile con tutti i browser recenti sia in versione desktop che mobile.\\
+La libreria \textit{Ractive.js} offre il supporto ad ES2015 permettendo di utilizzare le \textbf{promise} ed altri elementi che sono stati introdotti nello standard ES6 anche se non supportati dal browser.\\
+Nel caso in cui il browser supporti le \textbf{promise}, vengono utilizzate quelle definite nel ES6, altrimenti vengono utilizzate quelle definite dalla libreria che per il momento non supportano \textit{Promise.race} e \textit{Promise.cast}.
 
 \section{Editors}
+Per lo svolgimento del progetto poteva essere utilizzato qualsiasi editor di testo ma la scelta è ricaduta su \textit{SublimeText} data la sua versatilità e la sua licenza free.\\
+Questo editor riconosce di default i linguaggi  HTML, CSS, e Javascript e offre varie funzionalità come l'auto-completamento del codice, e un set di \textit{bundle} che permettono la stesura del codice in modo automatico tramite l'inserimento di \textit{keyword}.\\
+Inoltre \textit{SublimeText} permette l'estensione delle sue funzionalità tramite l'aggiunta di moduli offerti dalla comunità che lo supporta.
+
+\section{Inkscape}
+Inkscape è un software per la grafica vettoriale libero e open, disponibile per varie piattaforme.\\
+Questo software permette la creazione di immagini vettoriali nel formato SVG (Sclable Vector Graphics) e la loro esportazione in più varianti di questo formato.\\
+L'utilizzo di questo strumento è risultato molto utile per la creazione della struttura base di vari template, che in seguito sono stati modificati tramite la sintassi mustache.
 
 \section{Google Chrome Dev Tools}\label{sec:chrome}
-
-\section{Flow}
+Sono un insieme di strumenti offerti da Google agli sviluppatori accessibili all'interno del browser Google Chrome.\\
+Questi strumenti risultano molto utili sia nella fase di sviluppo che di testing dell'applicazione perché permettono al programmatore di vedere tutti gli elementi che compongono la pagina, ottenere informazioni sul network, tempi di caricamento delle risorse ed altro.\\
+Inoltre è possibile eseguire il codice passo passo tramite il debuger integrato e utilizzare la console per stampare messaggi, tramite \textbf{console.log()} o eseguire metodi.
+\section{}
 
 %Flow è uno strumento sviluppato da Facebook che effettua l'analisi statica del codice JavaScript per evidenziare potenziali errori dovuti ad un tipo di dato errato o all'utilizzo di valori \texttt{null}.
