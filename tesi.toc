@@ -22,23 +22,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.1}I template con sintassi mustache}{3}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Mustache.js}{4}{section.2.2}
+\contentsline {section}{\numberline {2.2}Mustache.js}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Come funziona}{5}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.2}Pregi e difetti}{5}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}HandlebarsJS}{5}{section.2.3}
+\contentsline {section}{\numberline {2.3}HandlebarsJS}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Come funziona}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Come funziona}{6}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.2}Pregi e difetti}{6}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Ractive.js}{6}{section.2.4}
+\contentsline {section}{\numberline {2.4}Ractive.js}{7}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Come funziona}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Come funziona}{7}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{7}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{8}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Confronto finale}{8}{section.2.5}
 \defcounter {refsection}{0}\relax 
@@ -60,7 +60,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}I template}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Ractive.js}{11}{section.4.1}
+\contentsline {section}{\numberline {4.1}Utilizzo di Ractive.js}{11}{section.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.1}L'oggetto Ractive}{11}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
