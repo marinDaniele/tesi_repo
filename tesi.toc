@@ -74,13 +74,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.6}Plug-in di terze parti}{13}{subsection.4.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Struttura dei template}{13}{section.4.2}
+\contentsline {section}{\numberline {4.2}Sviluppo dei template}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Rendere il template responsive}{13}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.1}Struttura dei template}{14}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{13}{section.4.4}
+\contentsline {section}{\numberline {4.3}Rendere il template responsive}{14}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{13}{section.4.5}
+\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{14}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{14}{section.4.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{15}{chapter.5}
 \defcounter {refsection}{0}\relax 
