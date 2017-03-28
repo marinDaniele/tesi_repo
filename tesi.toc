@@ -78,56 +78,58 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.1}Struttura dei template}{14}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Rendere il template responsive}{14}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.2}Prototipo di template}{14}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{14}{section.4.4}
+\contentsline {section}{\numberline {4.3}Rendere il template responsive}{15}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{14}{section.4.5}
+\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{15}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{15}{chapter.5}
+\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{15}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Applicazione per la modifica dei template}{15}{section.5.1}
+\contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{17}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Visualizzazione lista dei template}{15}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.1}Applicazione per la modifica dei template}{17}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Visualizzazione template selezionato}{15}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.1}Visualizzazione lista dei template}{17}{subsection.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Editor per la modifica del template}{15}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.2}Visualizzazione template selezionato}{17}{subsection.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Requisiti individuati}{15}{section.5.2}
+\contentsline {subsection}{\numberline {5.1.3}Editor per la modifica del template}{17}{subsection.5.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Riepilogo requisiti}{15}{section.5.3}
+\contentsline {section}{\numberline {5.2}Requisiti individuati}{17}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Progettazione}{17}{chapter.6}
+\contentsline {section}{\numberline {5.3}Riepilogo requisiti}{17}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Suddivisione template}{17}{section.6.1}
+\contentsline {chapter}{\numberline {6}Progettazione}{19}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Caricamento template}{17}{section.6.2}
+\contentsline {section}{\numberline {6.1}Suddivisione template}{19}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Creazione lista template}{17}{section.6.3}
+\contentsline {section}{\numberline {6.2}Caricamento template}{19}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{17}{section.6.4}
+\contentsline {section}{\numberline {6.3}Creazione lista template}{19}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{17}{section.6.5}
+\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{19}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Realizzazione}{19}{chapter.7}
+\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{19}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Il caricamento dei template}{19}{section.7.1}
+\contentsline {chapter}{\numberline {7}Realizzazione}{21}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{19}{section.7.2}
+\contentsline {section}{\numberline {7.1}Il caricamento dei template}{21}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{19}{section.7.3}
+\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{21}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{19}{section.7.4}
+\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{21}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{19}{section.7.5}
+\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{21}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{21}{chapter.8}
+\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{21}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{21}{section.8.1}
+\contentsline {chapter}{\numberline {8}Conclusioni}{23}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{21}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{23}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{21}{section.8.2}
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{23}{subsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{21}{section.8.3}
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{23}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{23}{section.8.3}

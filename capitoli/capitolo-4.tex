@@ -86,6 +86,45 @@ I vari template sono stati suddivisi in cartelle in questo modo:
 	\caption{organizzazione dei template nel file system.}
 \end{figure}
 
+\subsection{Prototipo di template}
+
+\begin{lstlisting}[language=HTML, caption= Esempio di template.]
+<div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
+
+	<img class="image" src= {{ img ? img : 'templates/tml1/img/no-image.png'}}>
+	<div class="prod-data">
+		<h2 class="center">{{nome}}</h2>
+		prezzo: <strong>{{prezzoCent}} euro</strong>
+		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >Disponibilità: {{#if quantita}}
+			<strong>disponibili {{quantita}}</strong>
+		{{else}}
+			<strong>Non disponibile</strong>
+		{{/if}}
+		</p>
+		<h3>Descrizione:</h3>
+		<p class="desc">{{descrizione}}</p>
+	</div>
+</div>
+
+<!-- stili -->
+<style>
+	<!-- parte relativa alle regole CSS -->
+	...
+</style>
+
+<script>
+	<!-- parte relativa al comportamento del template -->
+	component.exports = {
+		computed: {
+			prezzoCent: function(){
+				return this.get('prezzo').toFixed(2);
+			}
+		}
+		...
+	}
+</script>
+\end{lstlisting}
+
 \section{Rendere il template responsive}
 
 \section{Inserimento plug-in jQuery nei template}
