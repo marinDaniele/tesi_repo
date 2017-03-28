@@ -72,9 +72,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.5}Il virtual DOM}{13}{subsection.4.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.6}Creazione di un template}{13}{subsection.4.1.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.7}Plug-in di terze parti}{13}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.6}Plug-in di terze parti}{13}{subsection.4.1.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Struttura dei template}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 

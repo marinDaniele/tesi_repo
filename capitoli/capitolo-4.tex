@@ -63,9 +63,10 @@ Nel momento in cui si verifica un evento ed è necessario “reagire” ad esso 
 Attraverso l’analisi delle differenze tra lo stato del Virtual DOM precedente al verificarsi dell’evento e quello nuovo ottenuto dall’applicazione delle modifiche, Ractive determina i cambiamenti effettivi da apportare al DOM vero e proprio.\\
 Il calcolo delle differenze tra i due stati del DOM virtuale è estremamente veloce, e grazie a esso si limitano al minimo indispensabile gli interventi sul DOM reale, tendenzialmente più lento, garantendo quindi ottime performance.
 
-\subsection{Creazione di un template}
-
 \subsection{Plug-in di terze parti}\label{sec:packager}
+I \textit{plug-in} permettono di aumentare le funzionalità offerte dalla libreria Ractive.\\
+Agli sviluppatori è data la possibilità di creare i propri \textit{plug-in} o di scegliere quelli più adatti alle proprie esigenze da una lista presente sul sito di Ractive.js.\\
+Durante lo sviluppo del progetto sono stati utilizzati i \textit{plug-in} \href{https://github.com/ractivejs/ractive-events-tap}{ractive-events-tap}, per gestire il click/tap sui dispositivi mobili , e \href{https://github.com/ractivejs/ractive-load}{ractive-load}, per il caricamento tramite protocollo \textit{http} dei template.   
 
 \section{Struttura dei template}
 
