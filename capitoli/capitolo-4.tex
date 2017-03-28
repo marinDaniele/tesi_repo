@@ -68,7 +68,16 @@ I \textit{plug-in} permettono di aumentare le funzionalità offerte dalla librer
 Agli sviluppatori è data la possibilità di creare i propri \textit{plug-in} o di scegliere quelli più adatti alle proprie esigenze da una lista presente sul sito di Ractive.js.\\
 Durante lo sviluppo del progetto sono stati utilizzati i \textit{plug-in} \href{https://github.com/ractivejs/ractive-events-tap}{ractive-events-tap}, per gestire il click/tap sui dispositivi mobili , e \href{https://github.com/ractivejs/ractive-load}{ractive-load}, per il caricamento tramite protocollo \textit{http} dei template.   
 
-\section{Struttura dei template}
+\section{Sviluppo dei template}
+La creazione dei template, per il progetto, non presentava nessuna restrizione né per la forma né per i contenuti, quindi la decisione di quali template sviluppare era a discrezione del programmatore.\\
+L'unica richiesta, per questa fase del progetto, è stata quella di avere template sia HTML che SVG.\\
+\subsection{Struttura ddei template}
+I template HTML sono strutturati come una pagina web, cioè sono formati dal codice HTML per quanto riguarda i contenuti, il codice CSS per la loro rappresentazione grafica e JavaScript per definire il loro comportamento.\\
+Il codice HTML rappresentante il template deve essere arricchito tramite la sintassi \textit{mustache} contenenti le variabili, le espressioni e le direttive necessarie al funzionamento del template.\\
+Il comportamento del template viene sviluppato tramite gli strumenti offerti dalla libreria Ractive.
+La libreria permette di creare un singolo file che contiene al suo interno l'intero template cioè HTML+mustache, CSS e Javascript.\\
+Questo risulta molto vantaggioso in termini di quantità di file e organizzazione dei vari template.\\
+Ogni template dovrà inoltre avere un file di tipo JSON contenente i dati da visualizzare ed eventuali immagini o librerie necessarie per il suo corretto funzionamento. 
 
 \section{Rendere il template responsive}
 
