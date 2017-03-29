@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  28 MAR 2017 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  29 MAR 2017 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1770,18 +1770,16 @@ ini/logo-unipd.png>])
 \tf@lot=\write10
 \openout10 = `tesi.lot'.
 
- (./tesi.lol)
+ (./tesi.lol [9
+
+])
 \tf@lol=\write11
 \openout11 = `tesi.lol'.
 
- [9
-
-] [10
-
-])
+ [10])
 (./capitoli/capitolo-1.tex
 Capitolo 1.
-<immagini/../immagini/logo_zucchetti.jpg, id=232, 1023.825pt x 320.19624pt>
+<immagini/../immagini/logo_zucchetti.jpg, id=244, 1023.825pt x 320.19624pt>
 File: immagini/../immagini/logo_zucchetti.jpg Graphic file (type jpg)
 
 <use immagini/../immagini/logo_zucchetti.jpg>
@@ -1794,6 +1792,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--22
  []
 
 [1
+
 
 
 
@@ -1830,7 +1829,7 @@ Package csquotes Info: Input encoding change on input line 35.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [4]
-<immagini/../immagini/mustache_logo.png, id=289, 276.03125pt x 183.68625pt>
+<immagini/../immagini/mustache_logo.png, id=301, 276.03125pt x 183.68625pt>
 File: immagini/../immagini/mustache_logo.png Graphic file (type png)
 
 <use immagini/../immagini/mustache_logo.png>
@@ -1838,7 +1837,7 @@ Package pdftex.def Info: immagini/../immagini/mustache_logo.png used on input l
 ine 66.
 (pdftex.def)             Requested size: 186.0pt x 123.78104pt.
  [5 <./immagini/../immagini/mustache_logo.png>]
-<immagini/../immagini/handlebars_logo.jpg, id=296, 418.56375pt x 121.45375pt>
+<immagini/../immagini/handlebars_logo.jpg, id=307, 418.56375pt x 121.45375pt>
 File: immagini/../immagini/handlebars_logo.jpg Graphic file (type jpg)
 
 <use immagini/../immagini/handlebars_logo.jpg>
@@ -1846,7 +1845,7 @@ Package pdftex.def Info: immagini/../immagini/handlebars_logo.jpg used on input
  line 91.
 (pdftex.def)             Requested size: 186.0pt x 53.96982pt.
  [6 <./immagini/../immagini/handlebars_logo.jpg>]
-<immagini/../immagini/ractive_logo2.png, id=301, 513.92pt x 513.92pt>
+<immagini/../immagini/ractive_logo2.png, id=312, 513.92pt x 513.92pt>
 File: immagini/../immagini/ractive_logo2.png Graphic file (type png)
 
 <use immagini/../immagini/ractive_logo2.png>
@@ -1871,7 +1870,7 @@ File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [11
 
 ]
-<immagini/../immagini/twoWayBinding.png, id=332, 414.04688pt x 176.91093pt>
+<immagini/../immagini/twoWayBinding.png, id=343, 414.04688pt x 176.91093pt>
 File: immagini/../immagini/twoWayBinding.png Graphic file (type png)
 
 <use immagini/../immagini/twoWayBinding.png>
@@ -1884,7 +1883,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
  []
 
 
-<immagini/../immagini/fileSistemTemplate.png, id=340, 303.1325pt x 234.8775pt>
+<immagini/../immagini/fileSistemTemplate.png, id=351, 303.1325pt x 234.8775pt>
 File: immagini/../immagini/fileSistemTemplate.png Graphic file (type png)
 
 <use immagini/../immagini/fileSistemTemplate.png>
@@ -1895,34 +1894,74 @@ put line 85.
 Underfull \vbox (badness 3514) has occurred while \output is active []
 
  [13]
+[14 <./immagini/../immagini/fileSistemTemplate.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-Package csquotes Info: Input encoding change on input line 91.
+Package csquotes Info: Input encoding change on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [14 <./immagini/../immagini/fileSistemTemplate.png>]) (./capitoli/capitolo-5.
-tex [15] [16
+)
+Package csquotes Info: Input encoding change on input line 135.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+) [15]
+Package csquotes Info: Input encoding change on input line 144.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+)
+Package csquotes Info: Input encoding change on input line 156.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+)
+Package csquotes Info: Input encoding change on input line 171.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+) [16]
+<immagini/../immagini/screenshot_tml1_1.png, id=429, 651.43375pt x 334.24875pt>
+File: immagini/../immagini/screenshot_tml1_1.png Graphic file (type png)
+<use immagini/../immagini/screenshot_tml1_1.png>
+Package pdftex.def Info: immagini/../immagini/screenshot_tml1_1.png used on inp
+ut line 189.
+(pdftex.def)             Requested size: 260.56888pt x 133.69713pt.
+
+<immagini/../immagini/screenshot_tml1_2.png, id=430, 651.43375pt x 334.24875pt>
+File: immagini/../immagini/screenshot_tml1_2.png Graphic file (type png)
+<use immagini/../immagini/screenshot_tml1_2.png>
+Package pdftex.def Info: immagini/../immagini/screenshot_tml1_2.png used on inp
+ut line 191.
+(pdftex.def)             Requested size: 260.56888pt x 133.69713pt.
+) (./capitoli/capitolo-5.tex
+[17 <./immagini/../immagini/screenshot_tml1_1.png> <./immagini/../immagini/scre
+enshot_tml1_2.png>] [18
 
 ]
 Capitolo 5.
-) (./capitoli/capitolo-6.tex [17] [18
+) (./capitoli/capitolo-6.tex [19] [20
 
 ]
 Capitolo 6.
-) (./capitoli/capitolo-7.tex [19] [20
+) (./capitoli/capitolo-7.tex [21] [22
 
 ]
 Capitolo 7.
-) (./capitoli/capitolo-8.tex [21] [22
+) (./capitoli/capitolo-8.tex [23] [24
 
 ]
 Capitolo 8.
-) [23] [24
+) [25] [26
 
 ]
 No file tesi.gls.
@@ -1931,7 +1970,7 @@ No file tesi.acr.
 
 LaTeX Warning: Empty bibliography on input line 11.
 
-) [25]
+) [27]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./tesi.aux)
@@ -1951,13 +1990,13 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34097 strings out of 493089
- 600593 string characters out of 6134842
- 1223056 words of memory out of 5000000
- 36516 multiletter control sequences out of 15000+600000
- 28657 words of font info for 105 fonts, out of 8000000 for 9000
+ 34175 strings out of 493089
+ 602264 string characters out of 6134842
+ 1242062 words of memory out of 5000000
+ 36542 multiletter control sequences out of 15000+600000
+ 29877 words of font info for 111 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 62i,7n,76p,1792b,3303s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,7n,76p,1792b,1795s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/sourcecodepro/a_mqb3sg.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodeP
@@ -1979,12 +2018,13 @@ sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tesi.pdf (35 pages, 720403 bytes).
+/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on tesi.pdf (37 pages, 941789 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
- 199 named destinations out of 1000 (max. 500000)
- 31848 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 821 PDF objects out of 1000 (max. 8388607)
+ 736 compressed objects within 8 object streams
+ 230 named destinations out of 1000 (max. 500000)
+ 33906 words of extra memory for PDF output out of 35830 (max. 10000000)
 

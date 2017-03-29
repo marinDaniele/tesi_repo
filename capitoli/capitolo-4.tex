@@ -59,7 +59,7 @@ Il secondo è gestito dalle API \textit{publish/subscribe} e dal sistema di even
 I \textit{proxy events} collegano gli eventi del DOM con gli eventi di Ractive, mentre le chiamate a metodi direttamente sull'istanza ractive non utilizzano l'infrastruttura \textit{publish/subscribe}.
 \subsection{Il virtual DOM}
 Ractive utilizza un sistema differente dagli altri per tracciare le modifiche, ricorrendo al cosiddetto Virtual DOM, ossia a una rappresentazione virtuale della struttura del template immagazzinata in memoria e del tutto simile al DOM originale, del quale può essere vista come una astrazione.\\
-Nel momento in cui si verifica un evento ed è necessario “reagire” ad esso modificando gli elementi della pagina, Ractive applica prima tali interventi al Virtual DOM.\\
+Nel momento in cui si verifica un evento ed è necessario reagire ad esso modificando gli elementi della pagina, Ractive applica prima tali interventi al Virtual DOM.\\
 Attraverso l’analisi delle differenze tra lo stato del Virtual DOM precedente al verificarsi dell’evento e quello nuovo ottenuto dall’applicazione delle modifiche, Ractive determina i cambiamenti effettivi da apportare al DOM vero e proprio.\\
 Il calcolo delle differenze tra i due stati del DOM virtuale è estremamente veloce, e grazie a esso si limitano al minimo indispensabile gli interventi sul DOM reale, tendenzialmente più lento, garantendo quindi ottime performance.
 
@@ -78,15 +78,18 @@ Inoltre possono essere presenti le direttive necessarie nel caso il template pre
 Il comportamento del template viene sviluppato tramite gli strumenti offerti dalla libreria Ractive.\\
 La libreria permette di creare un singolo file che contiene al suo interno l'intero template cioè HTML+mustache, CSS e Javascript.\\
 Questo risulta molto vantaggioso per diminuire la quantità di file e migliorare l'organizzazione dei vari template.\\
-Ogni template dovrà inoltre avere un file di tipo JSON contenente i dati da visualizzare ed eventuali immagini o librerie necessarie per il suo corretto funzionamento.
-I vari template sono stati suddivisi in cartelle in questo modo:
+Ogni template dovrà inoltre avere un file con estensione \textit{.json} contenente i dati da visualizzare ed eventuali immagini o librerie necessarie per il suo corretto funzionamento.\\
+I vari template sono stati suddivisi in cartelle nel seguente modo:
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=\textwidth/2]{../immagini/fileSistemTemplate}
-	\caption{organizzazione dei template nel file system.}
+	\caption{Organizzazione dei template nel file system.}
 \end{figure}
 
+\newpage
+
 \subsection{Prototipo di template}
+Di seguito viene riportato una parte del codice utilizzato per la creazione di un template HTML.\\
 
 \begin{lstlisting}[language=HTML, caption= Esempio di template.]
 <div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
@@ -95,7 +98,8 @@ I vari template sono stati suddivisi in cartelle in questo modo:
 	<div class="prod-data">
 		<h2 class="center">{{nome}}</h2>
 		prezzo: <strong>{{prezzoCent}} euro</strong>
-		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >Disponibilità: {{#if quantita}}
+		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >Disponibilità: 
+		{{#if quantita}}
 			<strong>disponibili {{quantita}}</strong>
 		{{else}}
 			<strong>Non disponibile</strong>
@@ -124,6 +128,69 @@ I vari template sono stati suddivisi in cartelle in questo modo:
 	}
 </script>
 \end{lstlisting}
+
+Come si può notare il file è suddiviso in tre sezioni.\\
+La prima contiene il codice HTML con l'aggiunta di variabili ed espressioni inserite tramite mustache.
+
+\begin{lstlisting}[language=HTML, caption= Espressione con mustache.]
+<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >
+\end{lstlisting}
+
+Nell'esempio sopra riportato il codice permette di modificare l'attributo "classe" del tag \textit{p} in base al valore della variabile \textit{quantita}.\\
+La porzione di codice seguente rappresenta una condizione \textit{if} che visualizza nel template la stringa \textit{"disponibili: numero prodotti"} se \textit{quantita} è maggiore di 0 e \textit{"non disponibile"} altrimenti.
+
+\newpage
+
+\begin{lstlisting}[language=HTML, caption=Condizione if-else con mustache.]
+	{{#if quantita}}
+		<strong>disponibili {{quantita}}</strong>
+	{{else}}
+		<strong>Non disponibile</strong>
+	{{/if}}
+\end{lstlisting}
+
+Il file contiene anche l'implementazione dell'opzione \textit{computed} fornita dalla libreria Ractive.js che verrà utilizzata durante la creazione dell'oggetto Ractive.\\
+Tramite il metodo \textit{export} di component è possibile definire la logica del template utilizzando le opzioni e i metodi forniti dalla libreria Ractive.js.\\
+In questo caso viene indicato che ogni volta che il prezzo subisce modifiche questo deve essere convertito in una stringa e rappresentato con due decimali.
+
+\begin{lstlisting}[language=JavaScript, caption=Implementazione ed esportazione opzione computed.]
+component.exports = {
+	computed: {
+		prezzoCent: function(){
+			return this.get('prezzo').toFixed(2);
+		}
+	}
+	...
+}
+\end{lstlisting}
+
+Al template viene fornito un oggetto JSON contenente dei dati di default, utilizzati per ottenere una rappresentazione del template completa.\\
+Questi dati sono contenuti in un file con estensione \textit{.json} presente all'interno della directory del template.\\
+L'oggetto JSON è definito come segue.
+
+\begin{lstlisting}[language=JavaScript, caption=Rappresentazione dell'oggetto JSON.]
+{
+	"bgColor":"#ededed",
+	"textColor":"#000000",
+	"nome": "Cuffie rosse WiFi",
+	"img": "templates/tml1/img/cuffie.jpg",
+	"prezzo": 200,
+	"quantita": 6,
+	"descrizione": " ... "
+}
+\end{lstlisting}
+
+\newpage
+
+Il template risultante, dopo l'istanziazione dell'oggetto Ractive e l'opportuna inizializzazione è il seguente.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.4]{../immagini/screenshot_tml1_1}
+	\caption{Rappresentazione del template con \textit{quantità} maggiore di 0.}
+	\includegraphics[scale=0.4]{../immagini/screenshot_tml1_2}
+	\caption{Rappresentazione del template con \textit{quantità} uguale a 0.}
+\end{figure}
 
 \section{Rendere il template responsive}
 
