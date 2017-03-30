@@ -25,6 +25,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.7}Esempio di media query nel CSS del template.}{18}{lstlisting.4.7}
 \defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.8}Implementazione dell'opzione \textit {oncomplete}}{18}{lstlisting.4.8}
+\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}

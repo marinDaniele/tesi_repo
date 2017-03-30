@@ -217,7 +217,27 @@ Di seguito viene proposto un esempio di media query.
 \end{lstlisting}
 
 \section{Inserimento plug-in jQuery nei template}
-Oltre a rendere i template responsive, un'altra richiesta da soddisfare durante questa fase del progetto consisteva nel studiare la possibilità di sviluppare template che contenessero plug-in JQuery.\\
-
+Oltre a rendere i template responsive, un'altra richiesta da soddisfare durante questa fase del progetto consisteva nello studiare la possibilità di sviluppare template che contenessero plug-in JQuery.\\
+L'utilizzo di plug-in JQuery implica:
+\begin{itemize}
+	\item il caricamento della libreria del plug-in;
+	\item la stesura del codice HTML seguendo le regole fornite dallo sviluppatore della libreria;
+	\item la stesura di uno script JavaScript che va a richiamare le funzionalità desiderate tra quelle offerte dal plug-in.
+\end{itemize}
+Questo particolare script deve essere eseguito in seguito al caricamento del template all'interno della pagina.\\
+La soluzione individuata per avere template che contengano plag-in JQuery consiste nell'inserire lo script per il funzionamento del plug-in come implementazione dell'opzione \textit{oncomplete} dell'oggetto Ractive.\\
+L'opzione \textit{oncomplete} fa parte dei \textit{lifecycle events} di Ractive e viene richiamata nel momento in cui il template è stato completamente renderizzato.\\
+Questa soluzione oltre a permettere l'inserimento dello script all'interno del file del template, assicura che la sua esecuzione avvenga in maniera corretta.\\
+In seguito viene riportato un esempio di implementazione dell'opzione \textit{oncomplete} per l'utilizzo di un plug-in jQuery.
+\begin{lstlisting}[language=JavaScript, caption= Implementazione dell'opzione \textit{oncomplete}]
+<script>
+	component.exports = {
+		oncomplete: function() {
+			jQuery(this.find('#img1')).actuate('wobble');
+			jQuery(this.find('#img2')).actuate('pulse');
+		}
+	}
+</script>
+\end{lstlisting}
 \section{Caricamento dei template nelle pagine HTML}
 
