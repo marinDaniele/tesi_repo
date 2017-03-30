@@ -23,7 +23,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.6}Rappresentazione dell'oggetto JSON.}{16}{lstlisting.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.7}Esempio di media query nel CSS del template.}{17}{lstlisting.4.7}
+\contentsline {lstlisting}{\numberline {4.7}Esempio di media query nel CSS del template.}{18}{lstlisting.4.7}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 

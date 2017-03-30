@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  30 MAR 2017 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  30 MAR 2017 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1943,12 +1943,22 @@ File: immagini/../immagini/screenshot_tml1_2.png Graphic file (type png)
 Package pdftex.def Info: immagini/../immagini/screenshot_tml1_2.png used on inp
 ut line 190.
 (pdftex.def)             Requested size: 260.56888pt x 133.69713pt.
-Package csquotes Info: Input encoding change on input line 200.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+Underfull \hbox (badness 10000) in paragraph at lines 196--200
+
+ []
+
+[17 <./immagini/../immagini/screenshot_tml1_1.png> <./immagini/../immagini/scre
+enshot_tml1_2.png>]
+Package csquotes Info: Input encoding change on input line 202.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [17 <./immagini/../immagini/screenshot_tml1_1.png> <./immagini/../immagini/sc
-reenshot_tml1_2.png>]) (./capitoli/capitolo-5.tex [18]
+)
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+) (./capitoli/capitolo-5.tex [18]
 Capitolo 5.
 ) (./capitoli/capitolo-6.tex [19
 
@@ -1993,13 +2003,13 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34207 strings out of 493089
- 602743 string characters out of 6134842
+ 34209 strings out of 493089
+ 602765 string characters out of 6134842
  1242062 words of memory out of 5000000
  36552 multiletter control sequences out of 15000+600000
- 30173 words of font info for 114 fonts, out of 8000000 for 9000
+ 30231 words of font info for 115 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 62i,8n,76p,1792b,3111s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,8n,76p,1792b,1795s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/sourcecodepro/a_mqb3sg.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodeP
@@ -2024,7 +2034,7 @@ al/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tesi.pdf (37 pages, 945457 bytes).
+Output written on tesi.pdf (37 pages, 945648 bytes).
 PDF statistics:
  838 PDF objects out of 1000 (max. 8388607)
  753 compressed objects within 8 object streams

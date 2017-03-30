@@ -73,7 +73,7 @@ La creazione dei template, per il progetto, non presentava nessuna restrizione n
 L'unica richiesta, per questa fase del progetto, è stata quella di avere template sia HTML che SVG.\\
 \subsection{Struttura dei template}
 I template HTML sono strutturati come una pagina web, cioè sono formati dal codice HTML per quanto riguarda i contenuti, il codice CSS per la loro rappresentazione grafica e JavaScript per definire il loro comportamento.\\
-Il codice HTML rappresentante il template deve essere arricchito tramite la sintassi \textit{mustache} contenente le variabili, le espressioni e tutti gli elementi utili al funzionalento del template.\\
+Il codice HTML rappresentante il template deve essere arricchito tramite la sintassi \textit{mustache} contenente le variabili, le espressioni e tutti gli elementi utili al funzionamento del template.\\
 Inoltre possono essere presenti le direttive necessarie nel caso il template presenti la possibilità di interazione con esso.\\
 Il comportamento del template viene sviluppato tramite gli strumenti offerti dalla libreria Ractive.\\
 La libreria permette di creare un singolo file che contiene al suo interno l'intero template cioè HTML+mustache, CSS e Javascript.\\
@@ -181,8 +181,8 @@ L'oggetto JSON è definito come segue.
 
 \newpage
 
-Il template risultante, dopo l'istanziazione dell'oggetto Ractive e l'opportuna inizializzazione è il seguente.\\
-Vengono proposti il caso in cui la variabile \textit{quantita} sia maggiore di 0 e quello in cui la variabile sia 0 per mostrare il cambiamento nel template in base alla modifica dei dati.
+In seguito vengono proposte due immagini del template descritto in precedenza dopo il rendering da parte della libreria Ractive.js.\\
+Queste immagini fanno vedere come cambia la rappresentazione del template quando la variabile \textit{quantita} è maggiore di 0 e quando è uguale a 0.
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.4]{../immagini/screenshot_tml1_1}
@@ -195,8 +195,10 @@ Nel caso in cui il template utilizzi SVG, la struttura del template è la stessa
 \section{Rendere il template responsive}
 Uno dei requisiti richiesti per quanto riguarda lo sviluppo dei template è quello di renderli \textit{responsive}, in modo che sia possibile visualizzarli su dispositivi desktop e mobile.\\
 La soluzione individuata per soddisfare questo requisito è stata quella di inserire delle \textit{media-query} all'interno del CSS del template, definendo le regole per la corretta rappresentazione a diverse risoluzioni.\\
-La pagina che andrà ad ospitare i template dovrà contenere il meta-tag \textit{viewport} per garantire la corretta visualizzazione.
-
+La pagina che andrà ad ospitare i template dovrà contenere il meta-tag \textit{viewport} per garantire la corretta visualizzazione.\\
+Utilizzando questo metodo si riesce a mantenere il CSS all'interno del file che contiene il template, senza ricorrere ad uno o più file esterni contenenti le regole relative a vari dispositivi.\\
+\newpage
+Di seguito viene proposto un esempio di media query.
 \begin{lstlisting}[language=JavaScript, caption=Esempio di media query nel CSS del template.]
 @media only screen and (min-width: 320px) and (max-width: 639px){
 
@@ -215,6 +217,7 @@ La pagina che andrà ad ospitare i template dovrà contenere il meta-tag \textit
 \end{lstlisting}
 
 \section{Inserimento plug-in jQuery nei template}
+Oltre a rendere i template responsive, un'altra richiesta da soddisfare durante questa fase del progetto consisteva nel studiare la possibilità di sviluppare template che contenessero plug-in JQuery.\\
 
 \section{Caricamento dei template nelle pagine HTML}
 
