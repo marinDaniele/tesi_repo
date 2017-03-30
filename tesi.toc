@@ -82,9 +82,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Rendere il template responsive}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{17}{section.4.4}
+\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{18}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{17}{section.4.5}
+\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{18}{section.4.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 

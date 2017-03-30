@@ -93,12 +93,11 @@ Di seguito viene riportato una parte del codice utilizzato per la creazione di u
 
 \begin{lstlisting}[language=HTML, caption= Esempio di template.]
 <div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
-
 	<img class="image" src= {{ img ? img : 'templates/tml1/img/no-image.png'}}>
 	<div class="prod-data">
 		<h2 class="center">{{nome}}</h2>
 		prezzo: <strong>{{prezzoCent}} euro</strong>
-		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >Disponibilità: 
+		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}}>Disponibilità: 
 		{{#if quantita}}
 			<strong>disponibili {{quantita}}</strong>
 		{{else}}
@@ -192,7 +191,28 @@ Vengono proposti il caso in cui la variabile \textit{quantita} sia maggiore di 0
 	\caption{Rappresentazione del template con \textit{quantità} uguale a 0.}
 \end{figure}
 
+Nel caso in cui il template utilizzi SVG, la struttura del template è la stessa, con l'unica differenza che la sintassi mustache viene aggiunta al codice SVG.
 \section{Rendere il template responsive}
+Uno dei requisiti richiesti per quanto riguarda lo sviluppo dei template è quello di renderli \textit{responsive}, in modo che sia possibile visualizzarli su dispositivi desktop e mobile.\\
+La soluzione individuata per soddisfare questo requisito è stata quella di inserire delle \textit{media-query} all'interno del CSS del template, definendo le regole per la corretta rappresentazione a diverse risoluzioni.\\
+La pagina che andrà ad ospitare i template dovrà contenere il meta-tag \textit{viewport} per garantire la corretta visualizzazione.
+
+\begin{lstlisting}[language=JavaScript, caption=Esempio di media query nel CSS del template.]
+@media only screen and (min-width: 320px) and (max-width: 639px){
+
+	.image{
+		width: 90%;
+		...
+	}
+	
+	.prod-data{
+		float: none;
+		..
+	}
+
+	...
+}
+\end{lstlisting}
 
 \section{Inserimento plug-in jQuery nei template}
 
