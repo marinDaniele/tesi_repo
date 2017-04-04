@@ -27,6 +27,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.8}Implementazione dell'opzione \textit {oncomplete}}{18}{lstlisting.4.8}
 \defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {4.9}Funzioni che si occupano del caricamento delle librerie}{20}{lstlisting.4.9}
+\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}

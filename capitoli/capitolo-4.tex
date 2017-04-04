@@ -5,7 +5,7 @@
 
 %**************************************************************
 \chapter{I template}\label{cap:template}
-In questo capitolo viene descritto il lavoro svolto nella prima parte del progetto, che consiste nella realizzazione dei template, nel spiegare come sono stati resi responsive ed in fine come sia stato possibile inserire \textit{plug-in} JQuery al loro interno.\\
+In questo capitolo viene descritto il lavoro svolto nella prima parte del progetto, che consiste nella realizzazione dei template, nel spiegare come sono stati resi responsive ed in fine come sia stato possibile inserire \textit{plug-in} jQuery al loro interno.\\
 Viene anche trattato l'argomento relativo al loro caricamento all'interno della pagina HTML e la gestione delle librerie.
 %**************************************************************
 \section{Utilizzo di Ractive.js}
@@ -217,15 +217,15 @@ Di seguito viene proposto un esempio di media query.
 \end{lstlisting}
 
 \section{Inserimento plug-in jQuery nei template}
-Oltre a rendere i template responsive, un'altra richiesta da soddisfare durante questa fase del progetto consisteva nello studiare la possibilità di sviluppare template che contenessero plug-in JQuery.\\
-L'utilizzo di plug-in JQuery implica:
+Oltre a rendere i template responsive, un'altra richiesta da soddisfare durante questa fase del progetto consisteva nello studiare la possibilità di sviluppare template che contenessero plug-in jQuery.\\
+L'utilizzo di plug-in jQuery implica:
 \begin{itemize}
 	\item il caricamento della libreria del plug-in;
 	\item la stesura del codice HTML seguendo le regole fornite dallo sviluppatore della libreria;
 	\item la stesura di uno script JavaScript che va a richiamare le funzionalità desiderate tra quelle offerte dal plug-in.
 \end{itemize}
 Questo particolare script deve essere eseguito in seguito al caricamento del template all'interno della pagina.\\
-La soluzione individuata per avere template che contengano plag-in JQuery consiste nell'inserire lo script per il funzionamento del plug-in come implementazione dell'opzione \textit{oncomplete} dell'oggetto Ractive.\\
+La soluzione individuata per avere template che contengano plag-in jQuery consiste nell'inserire lo script per il funzionamento del plug-in come implementazione dell'opzione \textit{oncomplete} dell'oggetto Ractive.\\
 L'opzione \textit{oncomplete} fa parte dei \textit{lifecycle events} di Ractive e viene richiamata nel momento in cui il template è stato completamente renderizzato.\\
 Questa soluzione oltre a permettere l'inserimento dello script all'interno del file del template, assicura che la sua esecuzione avvenga in maniera corretta.\\
 In seguito viene riportato un esempio di implementazione dell'opzione \textit{oncomplete} per l'utilizzo di un plug-in jQuery.
@@ -242,12 +242,67 @@ In seguito viene riportato un esempio di implementazione dell'opzione \textit{on
 Ogni template che utilizza plug-in jQuery contiene nella propria directory, oltre alle librerie necessarie anche un file \textit{.json} che contiene un array con le \textit{path} delle librerie da caricare.
 
 \section{Caricamento dei template nelle pagine HTML}
-Per effettuare il caricamento dei template all'interno della pagina, sono state sviluppate varie funzioni di caricamento.\\
+Per effettuare il caricamento dei template all'interno della pagina, sono state sviluppate varie funzioni.\\
 Queste funzioni si distinguono per il tipo di template che devono caricare, cioè:
 \begin{itemize}
-	\item caricamento di template senza plug-in JQuery;
-	\item caricamento di template con plug-in JQuery e script di attivazione del plug-in all'interno del file del template;
-	\item caricamento di template con plug-in JQuery e script di attivazione del plug-in come file esterno al file del template;
+	\item caricamento di template senza plug-in jQuery;
+	\item caricamento di template con plug-in jQuery e script di attivazione del plug-in all'interno del file del template;
+	\item caricamento di template con plug-in jQuery e script di attivazione del plug-in come file esterno al file del template;
 \end{itemize} 
 Quest'ultimo caso è stato inserito per dare una possibilità in più nello sviluppo dei template, anche se non risulta essere la scelta migliore.\\
+Queste funzioni ,una volta ottenuto il nome del template da caricare, si occupano di effettuare una richiesta \textit{http-get} per ottenere i vari componenti del template.\\
+In seguito, utilizzando le risorse ottenute, viene istanziato un oggetto Ractive per ogni template.\\
+Quest'ultimo si occupa di renderizzare il template nella pagina.\\
+Per quanto riguarda il caricamento dei template che utilizzano plug-in jQuery, prima di effettuare la richiesta del template e dei suoi dati, viene effettuato il caricamento delle librerie necessarie al funzionamento del plug-in.\\
+Questo viene fatto leggendo il file \textit{libs.json} relativo al template e inserendo all'interno della pagina la richiesta di caricamento delle librerie.\\
+Su richiesta del tutor aziendale è stata sviluppata una funzione che controlla le librerie che dovranno essere caricate dal browser e nel caso in cui la libreria che deve essere caricata con il template sia già presente non viene effettuata un'ulteriore richiesta di caricamento.\\
+Questo comportamento evita di effettuare richieste superflue nel caso venissero caricati più template che utilizzano la medesima libreria.\\
+\newpage
+In seguito viene proposto il codice delle funzioni che si occupano di gestire il caricamento delle librerie.
+\begin{lstlisting}[language=JavaScript, caption=Funzioni che si occupano del caricamento delle librerie]
+//funzione che controlla se la libreria fa parte di quelle gia caricate
+var confrontaScript = function confrontaScript(library) {
+	var scriptArray = document.scripts;
+	var trovato = false;
+	for (var i = 0; i < scriptArray.length && !trovato; i++) {
+		var scriptUrl = scriptArray[i].attributes.src.value;
+		var scriptName = scriptUrl.slice( scriptUrl.lastIndexOf('/')+1, scriptUrl.length);
+		if (scriptName === library) {
+			trovato = true;
+			console.log('lo script '+library+' è già presente!');
+		}
+	}
+	return trovato;
+}
+
+this.confrontaScriptByUrl = function(url) {
+	var libraryUrl = url;
+	var libraryName = libraryUrl.slice( libraryUrl.lastIndexOf('/')+1, libraryUrl.length );
+	return confrontaScript(libraryName);
+}
+// funzione che si occupa se necessario di aggiungere la richiesta di caricamento alla pagina
+this.addLibraryFromUrl = function(url) {
+	var libraryUrl = url;
+	var libraryName = libraryUrl.slice( libraryUrl.lastIndexOf('/')+1, libraryUrl.length );
+	if (!confrontaScript(libraryName)) {
+		var node = document.createElement('script');
+		node.setAttribute('src', libraryUrl);
+		document.head.appendChild(node);
+		console.log('libreria '+libraryName+' aggiunta al file HTML');
+	}
+	else {
+		console.log('libreria '+libraryName+' gia presente nel file HTML');
+	}
+
+}
+\end{lstlisting}
+
+\subsection{Problemi riscontrati}
+Un problema che è stato rilevato, a riguardo del caricamento di template che utilizzano jQuery consiste nel fatto che il browser effettua il caricamento delle librerie in modo asincrono, quindi non gestibile da parte dello sviluppatore.\\
+Nel caso in cui la libreria non sia ancora stata caricata prima dell'avvenuto rendering del template, si verifica un errore perché le funzioni richiamate non vengono riconosciute.\\
+Il problema riscontrato sarebbe risolvibile se fosse possibile rilevare l'avvenuto caricamento delle risorse richieste, ma momentaneamente i browser non offrono strumenti adeguati.\\
+Una delle possibili soluzioni è quella di effettuare il \textit{reload} della pagina una volta che questa è stata completamente caricata.
+
+
+
 
