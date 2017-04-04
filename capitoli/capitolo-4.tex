@@ -233,11 +233,21 @@ In seguito viene riportato un esempio di implementazione dell'opzione \textit{on
 <script>
 	component.exports = {
 		oncomplete: function() {
-			jQuery(this.find('#img1')).actuate('wobble');
-			jQuery(this.find('#img2')).actuate('pulse');
+		  jQuery(this.find('#img1')).actuate('wobble');//find metodo di Ractive 
+		  jQuery(this.find('#img2')).actuate('pulse');//actuate metodo plug-in
 		}
 	}
 </script>
 \end{lstlisting}
+Ogni template che utilizza plug-in jQuery contiene nella propria directory, oltre alle librerie necessarie anche un file \textit{.json} che contiene un array con le \textit{path} delle librerie da caricare.
+
 \section{Caricamento dei template nelle pagine HTML}
+Per effettuare il caricamento dei template all'interno della pagina, sono state sviluppate varie funzioni di caricamento.\\
+Queste funzioni si distinguono per il tipo di template che devono caricare, cioè:
+\begin{itemize}
+	\item caricamento di template senza plug-in JQuery;
+	\item caricamento di template con plug-in JQuery e script di attivazione del plug-in all'interno del file del template;
+	\item caricamento di template con plug-in JQuery e script di attivazione del plug-in come file esterno al file del template;
+\end{itemize} 
+Quest'ultimo caso è stato inserito per dare una possibilità in più nello sviluppo dei template, anche se non risulta essere la scelta migliore.\\
 
