@@ -36,12 +36,20 @@ Il software risulta essere molto maturo e oltre alle funzionalità sopracitate p
 Il progetto proposto dall'azienda per lo stage, nasce dal desiderio di aggiungere all'applicazione Portal Studio una nuova funzionalità che consiste nell'offrire all'utente la possibilità di inserire nelle proprie pagine HTML dei template già pronti e selezionabili da un insieme prestabilito.\\
 Questo desiderio ha portato l'azienda ad interessarsi ai template engine come Mustache.js, HandlebarJS ecc.\\
 Lo stage si divide in due parti.\\
-La prima consisteva nello studio dei template e degli aspetti ad essi correlati, la seconda nella realizzazione di un editor che ne permettesse la visualizzazione e la modifica.
+La prima consisteva nello studio dei template e degli aspetti ad essi correlati, la seconda nella realizzazione di un editor che ne permettesse la visualizzazione e la modifica.\\
+Le parti più rilevanti del lavoro svolto sono state sicuramente:
+\begin{itemize}
+	\item la scelta della libreria da utilizzare nello sviluppo del progetto, che è stata individuata analizzando le caratteristiche di varie librerie per il templateing, cercando fra queste quella che in miglior modo si adeguasse ai requisiti del progetto.
+	Questa libreria è stata scelta sapendo che l'azienda l'avrebbe utilizzata per il proprio applicativo quindi i risultati dell'analisi effettuata sono stati discussi con il tutor aziendale che si occupa inoltre del reparto di ricerca e sviluppo;
+	\item l'integrazione di plug-in JQuery all'interno del file dove è definito il template;
+	\item la realizzazione della parte dell'editor relativa alla modifica dei dati, che permette di adattarsi a qualsiasi tipo di template HTML ed SVG e inoltre, nonostante i pochi tipi primitivi forniti da JavaScript, di individuare a quale elemento (immagine, URL, colore, ecc.) si riferiscano i dati dei template.  
+\end{itemize}
 \subsection{Prima parte}
 La prima parte del progetto inizia con la realizzazione di qualche template prototipo, utile sia per studiare le possibilità della libreria scelta sia per avere un insieme di template da inserire nell'editor che è stato realizzato in seguito.\\
 Durante questa parte del progetto l'attenzione è stata rivolta alla possibilità di realizzare template statici, dinamici, template come composizione di altri template (es. lista di contatti) e template che utilizzano SVG.\\
 In seguito alla realizzazione dei template prototipo è stato effettuato uno studio sulla possibilità di rendere i template responsive cioè permetterne la visualizzazione sia su dispositivi desktop che mobile.\\
 La prima parte si è conclusa con uno studio sulla possibilità di realizzare template che contenessero al loro interno plug-in JQuery e sulla gestione del caricamento delle librerie necessarie al funzionamento dei template all'interno della pagina HTML.
+
 \subsection{Seconda parte}
 La seconda parte del progetto consisteva nella realizzazione di un editor grafico che permette all'utente la selezione di un template da una lista prestabilita.
 In seguito alla selezione del template desiderato quest'ultimo verrà visualizzato in un box dedicato e tramite un editor, che viene costruito sulla base dei dati editabili del template (i dati sono contenuti in un oggetto JSON che fa parte del template), è possibile vedere il comportamento del template durante la modifica dei suoi dati.	\\

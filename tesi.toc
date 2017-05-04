@@ -16,122 +16,122 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.2}Seconda parte}{2}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Librerie analizzate}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Librerie analizzate}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Considerazioni generali}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Considerazioni generali}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}I template con sintassi mustache}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}I template con sintassi mustache}{5}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Mustache.js}{5}{section.2.2}
+\contentsline {section}{\numberline {2.2}Mustache.js}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Come funziona}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Come funziona}{7}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Pregi e difetti}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Pregi e difetti}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}HandlebarsJS}{6}{section.2.3}
+\contentsline {section}{\numberline {2.3}HandlebarsJS}{8}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Come funziona}{6}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Come funziona}{8}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Pregi e difetti}{6}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Pregi e difetti}{8}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Ractive.js}{7}{section.2.4}
+\contentsline {section}{\numberline {2.4}Ractive.js}{9}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Come funziona}{7}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.1}Come funziona}{9}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{8}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Pregi e difetti}{10}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Confronto finale}{8}{section.2.5}
+\contentsline {section}{\numberline {2.5}Confronto finale}{10}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Libreria scelta}{8}{section.2.6}
+\contentsline {section}{\numberline {2.6}Libreria scelta}{10}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Strumenti e tecnologie utilizzati}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Strumenti e tecnologie utilizzati}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Linguaggi utilizzati}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}Linguaggi utilizzati}{11}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}JavaScript ES5}{9}{section.3.2}
+\contentsline {section}{\numberline {3.2}JavaScript ES5}{11}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Editors}{10}{section.3.3}
+\contentsline {section}{\numberline {3.3}Editors}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Inkscape}{10}{section.3.4}
+\contentsline {section}{\numberline {3.4}Inkscape}{12}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Google Chrome Dev Tools}{10}{section.3.5}
+\contentsline {section}{\numberline {3.5}Google Chrome Dev Tools}{12}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}QUnit}{10}{section.3.6}
+\contentsline {section}{\numberline {3.6}QUnit}{12}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}I template}{11}{chapter.4}
+\contentsline {chapter}{\numberline {4}I template}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Utilizzo di Ractive.js}{11}{section.4.1}
+\contentsline {section}{\numberline {4.1}Utilizzo di Ractive.js}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}L'oggetto Ractive}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}L'oggetto Ractive}{13}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Le opzioni principali}{12}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Le opzioni principali}{14}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Il two-way data biding}{12}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Il two-way data biding}{14}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Gli eventi}{13}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.4}Gli eventi}{15}{subsection.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}Il virtual DOM}{13}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.5}Il virtual DOM}{15}{subsection.4.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.6}Plug-in di terze parti}{13}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.6}Plug-in di terze parti}{15}{subsection.4.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Sviluppo dei template}{13}{section.4.2}
+\contentsline {section}{\numberline {4.2}Sviluppo dei template}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Struttura dei template}{14}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Struttura dei template}{16}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Prototipo di template}{15}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Prototipo di template}{17}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Rendere il template responsive}{17}{section.4.3}
+\contentsline {section}{\numberline {4.3}Rendere il template responsive}{19}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{18}{section.4.4}
+\contentsline {section}{\numberline {4.4}Inserimento plug-in jQuery nei template}{20}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{19}{section.4.5}
+\contentsline {section}{\numberline {4.5}Caricamento dei template nelle pagine HTML}{21}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Problemi riscontrati}{20}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}Problemi riscontrati}{22}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{21}{chapter.5}
+\contentsline {chapter}{\numberline {5}Analisi dei Requisiti}{23}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Applicazione per la modifica dei template}{21}{section.5.1}
+\contentsline {section}{\numberline {5.1}Applicazione per la modifica dei template}{23}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Visualizzazione lista dei template}{21}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.1}Visualizzazione lista dei template}{23}{subsection.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Visualizzazione template selezionato}{21}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Visualizzazione template selezionato}{24}{subsection.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Editor per la modifica del template}{21}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.3}Editor per la modifica del template}{24}{subsection.5.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Requisiti individuati}{21}{section.5.2}
+\contentsline {section}{\numberline {5.2}Requisiti individuati}{24}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Riepilogo requisiti}{21}{section.5.3}
+\contentsline {section}{\numberline {5.3}Riepilogo requisiti}{24}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Progettazione}{23}{chapter.6}
+\contentsline {chapter}{\numberline {6}Progettazione}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Suddivisione template}{23}{section.6.1}
+\contentsline {section}{\numberline {6.1}Suddivisione template}{25}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Caricamento template}{23}{section.6.2}
+\contentsline {section}{\numberline {6.2}Caricamento template}{25}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Creazione lista template}{23}{section.6.3}
+\contentsline {section}{\numberline {6.3}Creazione lista template}{25}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{23}{section.6.4}
+\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{25}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{23}{section.6.5}
+\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{25}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Realizzazione}{25}{chapter.7}
+\contentsline {chapter}{\numberline {7}Realizzazione}{27}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Il caricamento dei template}{25}{section.7.1}
+\contentsline {section}{\numberline {7.1}Il caricamento dei template}{27}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{25}{section.7.2}
+\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{27}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{25}{section.7.3}
+\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{27}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{25}{section.7.4}
+\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{27}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{25}{section.7.5}
+\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{27}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{27}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusioni}{29}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{27}{section.8.1}
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{29}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{27}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{29}{subsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{27}{section.8.2}
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{29}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{27}{section.8.3}
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{29}{section.8.3}

@@ -6,11 +6,27 @@
 %**************************************************************
 \chapter{Analisi dei Requisiti}
 \label{cap:analisi-dei-requisiti}
+In questo capitolo sono contenuti i requisiti dell'applicazione che sono stati individuati durante il progetto.\\
+Le linee guida per la creazione dell'applicazione sono state fornite dal tutor e sulla base di esse sono stati individuati i requisiti che in seguito sono stati dicussi con il tutor per ottenerne l'approvazione.
 %**************************************************************
 
 \section{Applicazione per la modifica dei template}
-
+L'applicazione richiesta per il progetto deve permettere all'utente di visualizzare un insieme di template predefinito, da cui sia possibile selezionare quello desiderato.\\
+In seguito alla selezione del template, l'utilizzatore deve poter visualizzare quest'ultimo all'interno di una \textit{view} apposita.\\
+In questa fase deve essere fornito all'utente un editor specifico in relazione al template selezionato, che offra la possibilità di visualizzare e modificare i dati forniti di \textit{default} dal template e di vedere all'interno della \textit{view} dedicata il comportamento del template in seguito alla modifica dei dati.\\
+L'applicazione deve eseguire all'interno di un browser e deve essere compatibile con i più importanti fra essi (Chrome, Firefox, Opera ed Edge).
 \subsection{Visualizzazione lista dei template}
+Questa sezione dell'applicazione è dedicata alla visualizzazione e selezione dei template disponibili.\\
+La lista deve essere composta dalle miniature dei template in modo da offrire una prima visione di come viene rappresentato il template.\\
+All'utente deve essere permesso di scorrere tutta la lista tramite uno scroll infinito.\\
+La lista deve presentare i template per categorie, le seguenti sono quelle individuate durante l'analisi:
+\begin{itemize}
+	\item template singoli;
+	\item template composti;
+	\item template singoli contenenti plug-in JQuery;
+	\item template composti contenenti plug-in JQuery;
+\end{itemize}
+I template \textit{singoli} sono dei template la cui costruzione è frutto dell'interpolazione dei dati con un singolo template, mentre quelli \textit{composti} sono template frutto dell'unione di più template.\\
 
 \subsection{Visualizzazione template selezionato}
 
