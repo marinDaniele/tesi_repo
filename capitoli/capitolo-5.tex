@@ -27,11 +27,110 @@ La lista deve presentare i template per categorie, le seguenti sono quelle indiv
 	\item template composti contenenti plug-in JQuery;
 \end{itemize}
 I template \textit{singoli} sono dei template la cui costruzione è frutto dell'interpolazione dei dati con un singolo template, mentre quelli \textit{composti} sono template frutto dell'unione di più template.\\
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.5]{../immagini/mockup_lista}
+	\caption{Mockup lista di visualizzazione template.}
+\end{figure}
 
 \subsection{Visualizzazione template selezionato}
-
+Questa sezione dell'applicazione è dedicata alla visualizzazione del template selezionato.\\
+Il box di visualizzazione non presenta particolari caratteristiche, la sua funzione è quella di mostrare all'utente il template selezionato come verrebbe visualizzato nella pagina html e permettere di osservare i cambiamenti del template in base alla modifica dei dati.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.45]{../immagini/mockup_view}
+	\caption{Mockup box di visualizzazione template.}
+\end{figure}
 \subsection{Editor per la modifica del template}
+Questa è l'ultima sezione dell'applicazione e si occupa di fornire all'utente gli strumenti per la modifica dei dati relativi al template selezionato.\\
+L'utente deve poter visualizzare tutti i dati disponibili per la modifica tramite un interfaccia visuale.\\
+Quest'ultima deve fornire all'utente gli strumenti più adeguati per la modifica dei dati in base al loro tipo.\\
+Nel caso in cui i template siano composti, l'editor deve visualizzare l'oggetto JSON che rappresenta i dati e dare all'utente la possibilità di modificarne il codice.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%regole per la creazione myminipage
+\newenvironment{myminipage}[1]{\minipage{#1} 
+	\captionsetup{width=\textwidth, name=Fig., labelfont={it,bf}}
+}{\endminipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb] 
+	\begin{myminipage}{0.40\textwidth} 
+		\includegraphics[scale=0.52]{../immagini/mockup_editor1} 
+		\caption[Prima figura]{Editor template semplici.}\label{fig:1} 
+	\end{myminipage} 
+	\hspace{0.1\textwidth} 
+	\begin{myminipage}{0.40\textwidth}
+		\includegraphics[scale=0.52]{../immagini/mockup_editor2_2}
+		\caption[Seconda figura]{Editor template composti.}\label{fig:2} 
+	\end{myminipage}  
+\end{figure}
+
+\newpage
 \section{Requisiti individuati}
+%parte presa da giacomo
+I requisiti individuati sono frutto dall'analisi ed espansione dei requisiti di base e delle discussioni con il tutor aziendale.\\
+Di seguito viene descritto il codice con cui sono stati catalogati:
+\begin{center}
+	\textit{R[T][I][C]}
+\end{center}
+dove:
+\begin{itemize}
+	\item \textbf{T}ipo: specifica la tipologia del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F} - \textit{funzionale}, cioè che determina una funzionalità dell'applicazione;
+		\item \textbf{V} - \textit{vincolo}, che riguarda un vincolo che il prodotto deve rispettare.
+	\end{itemize}
+	\item \textbf{I}mportanza: specifica l'importanza del requisito e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{O} - \textit{obbligatorio}, il requisito corrisponde ad un obbiettivo minimo del piano di stage e deve essere soddisfatto per garantire il funzionamento minimo dell'applicazione;
+		\item \textbf{D} - \textit{desiderabile}, il requisito corrisponde ad un obbiettivo massimo del piano di stage e deve essere soddisfatto per garantire il funzionamento dell'applicazione;
+		\item \textbf{F} - \textit{facoltativo}, indica che il requisito fornisce del valore aggiunto all'applicazione e non era stato previsto nel piano di stage.
+	\end{itemize}
+	\item \textbf{C}odice: rappresenta un codice che identifica il requisito all'interno di una gerarchia. Questo codice è definito in modo che il requisito \textit{RTIx.y} sia un requisito che va a definire con un grado maggiore di dettaglio alcuni degli aspetti del requisito \textit{RTIx}.
+\end{itemize}
+
+%subsection
+\input{./extra/requisiti.tex}
 
 \section{Riepilogo requisiti}
+I requisiti individuati sono in totale 56 e vengono ripartiti tra le varie tipologie secondo quanto riportato nelle seguenti tabelle.
+\\ \\ \\
+\begin{minipage}{\textwidth}
+	\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\begin{tabular}{|l|c|} \hline
+			\textbf{Importanza} & \textbf{\#} \\ \hline
+			Obbligatori & 42 \\ \hline
+			Desiderabili & 9 \\ \hline
+			Facoltativi & 5 \\ \hline
+			Totale & 56 \\ \hline
+		\end{tabular}
+		\captionof{table}{Numero di requisiti per importanza}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\begin{tabular}{|l|c|} \hline
+			\textbf{Tipologia} & \textbf{\#} \\ \hline
+			Funzionali & 46 \\ \hline
+			Vincolo & 10 \\ \hline
+			Totale & 56 \\ \hline
+		\end{tabular}
+		\captionof{table}{Numero di requisiti per tipologia}
+	\end{minipage}
+\end{minipage}
+\\ \\ \\
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[scale=0.35]{../immagini/chart_requisiti_importanza}
+		\captionof{figure}{Requisiti per importanza}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[scale=0.35]{../immagini/chart_requisiti_tipo}
+		\captionof{figure}{Requisiti per tipologia}
+	\end{minipage}
+\end{minipage}
