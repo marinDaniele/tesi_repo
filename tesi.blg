@@ -1,0 +1,9 @@
+[1] Config.pm:324> INFO - This is Biber 2.1
+[1] Config.pm:327> INFO - Logfile is 'tesi.blg'
+[116] biber-darwin:276> INFO - === Wed May 17, 2017, 13:53:19
+[116] Biber.pm:333> INFO - Reading 'tesi.bcf'
+[362] Biber.pm:642> INFO - Using all citekeys in bib section 0
+[417] Biber.pm:2977> INFO - Processing section 0
+[466] Biber.pm:3115> INFO - Looking for bibtex format file 'bibliografia.bib' for section 0
+[645] Utils.pm:162> ERROR - Cannot find 'bibliografia.bib'!
+[646] Biber.pm:110> INFO - ERRORS: 1

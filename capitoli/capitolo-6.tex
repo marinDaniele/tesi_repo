@@ -6,8 +6,23 @@
 %**************************************************************
 \chapter{Progettazione}
 \label{cap:progettazione}
+In questo capitolo viene spiegato il metodo di suddivisione delle risorse, come viene effettuato il caricamento dei vari componenti dei template e vengono descritte le funzioni che compongono l'applicazione.
 %**************************************************************
 \section{Suddivisione template}
+Come descritto nel capitolo \textit{Analisi dei requisiti} i template sono stati divisi in quattro tipologie.\\
+Dato che non sono presenti delle API fornite dall'azienda, per ottenere informazioni sui template disponibili, come il loro numero, il loro tipo e le risorse che li compongono, è stato deciso di utilizzare un metodo semplice per gestire i template.\\
+Questo metodo consiste nel distinguere i vari template tramite il loro nome.\\
+Il nome di ogni template è composto da due parti, la prima definisce il tipo e la seconda è un numero che identifica ogni singolo template.\\
+Le quattro categorie vengono nominate come segue:
+\begin{itemize}
+	\item \textbf{tml} identifica i template semplici;
+	\item \textbf{jtml} identifica i template semplici contenenti plug-in JQuery;
+	\item \textbf{ctml} identifica i template composti;
+	\item \textbf{jctml} identifica i template composti contenenti plug-in JQuery.
+\end{itemize}
+Quindi il nome \textbf{tml1} identificherà il primo dei template semplici all'interno della directory \textit{templates}.\\
+I file che definiscono il template utilizzano lo stesso nome del template a cui appartengono.
+
 \section{Caricamento template}
 \section{Creazione lista template}
 \section{Visualizzazione template selezionato}
