@@ -110,32 +110,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Suddivisione template}{29}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Caricamento template}{30}{section.6.2}
+\contentsline {subsection}{\numberline {6.1.1}Accesso alle risorse}{29}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Creazione lista template}{30}{section.6.3}
+\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}{29}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{30}{section.6.4}
+\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.json}{30}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{30}{section.6.5}
+\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}\_libs.json}{31}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Realizzazione}{31}{chapter.7}
+\contentsline {section}{\numberline {6.2}Caricamento template}{31}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Il caricamento dei template}{31}{section.7.1}
+\contentsline {section}{\numberline {6.3}Creazione lista template}{32}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{31}{section.7.2}
+\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{33}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{31}{section.7.3}
+\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{33}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{31}{section.7.4}
+\contentsline {chapter}{\numberline {7}Realizzazione}{35}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{31}{section.7.5}
+\contentsline {section}{\numberline {7.1}Il caricamento dei template}{35}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{33}{chapter.8}
+\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{35}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{33}{section.8.1}
+\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{35}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{33}{subsection.8.1.1}
+\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{35}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{33}{section.8.2}
+\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{35}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{33}{section.8.3}
+\contentsline {chapter}{\numberline {8}Conclusioni}{37}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{37}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{37}{subsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{37}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{37}{section.8.3}

@@ -9,21 +9,160 @@
 In questo capitolo viene spiegato il metodo di suddivisione delle risorse, come viene effettuato il caricamento dei vari componenti dei template e vengono descritte le funzioni che compongono l'applicazione.
 %**************************************************************
 \section{Suddivisione template}
-Come descritto nel capitolo \textit{Analisi dei requisiti} i template sono stati divisi in quattro tipologie.\\
-Dato che non sono presenti delle API fornite dall'azienda, per ottenere informazioni sui template disponibili, come il loro numero, il loro tipo e le risorse che li compongono, è stato deciso di utilizzare un metodo semplice per gestire i template.\\
-Questo metodo consiste nel distinguere i vari template tramite il loro nome.\\
-Il nome di ogni template è composto da due parti, la prima definisce il tipo e la seconda è un numero che identifica ogni singolo template.\\
+Come descritto nel capitolo \textit{Analisi dei requisiti} \ref{subsec:visualizzazione_template} i template sono stati divisi in quattro tipologie.\\
+Dato che non sono presenti delle API fornite dall'azienda, per ottenere informazioni sui template disponibili, come il loro numero, il loro tipo e le risorse che li compongono, è stato deciso di utilizzare un metodo semplice per gestire i template all'interno del file-system.\\
+Le risorse sono state suddivise in directory, che rappresentano i template.\\
+Ad ogni directory e alle risorse principali in esse contenute è stato assegnato un nome che permette di identificare il singolo template e il suo tipo.\\
 Le quattro categorie vengono nominate come segue:
 \begin{itemize}
-	\item \textbf{tml} identifica i template semplici;
-	\item \textbf{jtml} identifica i template semplici contenenti plug-in JQuery;
-	\item \textbf{ctml} identifica i template composti;
-	\item \textbf{jctml} identifica i template composti contenenti plug-in JQuery.
+	\item \textbf{tml} identifica i template di tipo semplici;
+	\item \textbf{jtml} identifica i template di tipo semplici contenenti plug-in JQuery;
+	\item \textbf{ctml} identifica i template di tipo composti;
+	\item \textbf{jctml} identifica i template di tipo composti contenenti plug-in JQuery.
 \end{itemize}
-Quindi il nome \textbf{tml1} identificherà il primo dei template semplici all'interno della directory \textit{templates}.\\
-I file che definiscono il template utilizzano lo stesso nome del template a cui appartengono.
+\subsection{Accesso alle risorse}
+Le risorse necessarie sono reperibili tramite chiamata \textit{http-get} ad un URL nella forma \texttt{/templates/\{tipo+indice\}/\{tipo+indice\}.estensione}, dove \texttt{tipo} è uno dei quattro tipi descritti in precedenza, \texttt{indice} è il numero che identifica il template.
+
+\subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}
+Restituisce il file HTML che descrive il template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+\begin{lstlisting}[language=HTML, caption=Esempio di richiesta http-get su /templates/\{tipo+indice\}/\{tipo+indice\}.html.]
+<div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
+
+	<img class="image" src= {{ img ? img : 'templates/tml1/img/no-image.png'}}>
+	<div class="prod-data">
+		<h2 class="center">{{nome}}</h2>
+		prezzo: <strong>{{prezzoCent}} Euro</strong>
+		<p class={{ quantita ? 'disponibile' : 'non-disponibile'}} >Disponibilità: {{#if quantita}}
+			<strong>disponibili {{quantita}}</strong>
+			{{else}}
+			<strong>Non disponibile</strong>
+			{{/if}}
+		</p>
+		<h3>Descrizione:</h3>
+		<p class="desc">{{descrizione}}</p>
+	</div>
+</div>
+
+<!-- stili -->
+<style>
+#tml1{
+	position: relative;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	border: 1px solid black;
+	overflow: auto;
+}
+
+...
+
+</style>
+
+<!-- comportamento -->
+<script>
+	component.exports = {
+		computed: {
+			prezzoCent: function(){
+				return this.get('prezzo').toFixed(2);
+			}
+		}
+		
+		...
+	}
+</script>
+\end{lstlisting}
+
+\subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}.json}
+Restituisce l'oggetto JSON contenente i dati del template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+\begin{lstlisting}[language=JSON, caption=Esempio di oggetto JSON restituito.]
+{
+	"bgColor":string,
+	"textColor":string,
+	"nome": string,
+	"img": string,
+	"prezzo": number,
+	"quantita": number,
+	"descrizione": string
+}
+\end{lstlisting}
+\subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}\_libs.json}
+Restituisce, se il template contiene plug-in, l'oggetto JSON contenente l'URL delle librerie utilizzate, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+\begin{lstlisting}[language=JSON, caption=Esempio di oggetto JSON restituito.]
+{
+	"libs": [
+		string,
+		string,
+		...
+	]
+}
+\end{lstlisting}
 
 \section{Caricamento template}
+Il caricamento di un template consiste nel reperire le risorse principali ad esso relative e con queste istanziare un oggetto di tipo ractive, che una volta creato verrà renderizzato in un apposito elemento HTML.\\
+Per effettuare questa operazione sono state definite le seguenti funzioni:
+\begin{itemize}
+	\item \texttt{loadTemplateWithoutJQuery(tmlUrl, dataUrl, tmlAnchor)}\\
+	Questa funzione si occupa del caricamento e del rendering dei template che \textit{non contengono} plug-in JQuery.\\
+	La funzione recupera le risorse da \texttt{tmlUrl} e \texttt{dataUrl}, crea un'istanza \textit{Ractive} che rappresenta il template e lo renderizza all'interno dell'elemento HTML con id \texttt{tmlAnchor}.
+	
+	\item \texttt{loadTemplateWithJQueryPlugins(tmlUrl, dataUrl, libsUrl, tmlAnchor)}\\
+	Questa funzione si occupa del caricamento e del rendering dei template che \textit{contengono} plug-in JQuery.\\
+	La funzione recupera la lista delle librerie JQuery del template da \texttt{libsUrl} e usa la funzione \texttt{loadLibs} per gestire il loro caricamento.\\
+	In seguito recupera le risorse da \texttt{tmlUrl} e \texttt{dataUrl}, crea un'istanza \textit{Ractive} che rappresenta il template e lo renderizza all'interno dell'elemento HTML con id \texttt{tmlAnchor}.
+	
+	\newpage
+	\item \texttt{loadLibs(libs)}\\
+	Questa funzione riceve un \textit{array} di URL relative alle librerie JQuery da caricare e utilizzando la funzione \texttt{addLibraryFromUrl(libUrl)} ne gestisce il caricamento.
+	\begin{lstlisting}[language=JSON, caption=Esempio array \texttt{libs}.]
+	{
+		"libs": [
+			"templates/template_name/lib/library1_name.js",
+			"templates/template_name/lib/library2_name.js",
+			"templates/template_name/lib/library3_name.js"
+		]
+	}
+	\end{lstlisting}
+	
+	\item \texttt{addLibraryFromUrl(libUrl)}\\
+	Questa funzione provvede al caricamento della libreria presente all'URL \texttt{libUrl} nel caso questa non sia stata caricata.
+	
+\end{itemize}
 \section{Creazione lista template}
+In questa sezione vengono descritte le funzioni che si occupano della creazione della lista di selezione dei template.\\
+Questa lista deve essere composta dalle miniature dei template suddivise fra le quattro categorie descritte in precedenza.\\
+Per poter effettuare il caricamento è necessario definire un oggetto JavaScript che contenga il numero di template disponibili al caricamento suddivisi per categoria.\\
+La scelta di definire questo oggetto nasce dal fatto che non sono presenti API per ottenere informazioni sui template, quindi data la struttura del file-system e il fatto che i template sono indicizzati in maniera ordinata è possibile utilizzare un oggetto per descrivere l'insieme dei template da caricare.\\
+
+\begin{itemize}
+	\item \texttt{templatesToLoad}\\
+	Questo oggetto descrive l'insieme dei template offerti dall'applicazione.\\
+	La sua struttura è formata da coppie del tipo \textit{chiave-valore} che rappresentano rispettivamente:
+	\begin{itemize}
+		\item \textbf{chiave} definisce il tipo dei template;
+		\item \textbf{valore} contiene il numero dei template di tipo chiave.
+	\end{itemize}
+	L'oggetto è rappresentato come segue:
+	\begin{lstlisting}[language=JSON, caption= Struttura oggetto \texttt{templatesToLoad}.]
+	{
+		tml: number,
+		jtml: number,
+		ctml: number,
+		jctml: number
+	}
+	\end{lstlisting}
+	
+	\item \texttt{createTemplateList()}\\
+	Questa funzione si occupa di inserire le varie categorie all'interno della lista e tramite l'ausilio della funzione \texttt{loadTemplateList(type, num)} di popolare la lista.\\
+	La funzione utilizza l'oggetto \texttt{templateToLoad} per conoscere l'insieme dei template.
+	
+	\item \texttt{loadTemplateList(type, num)}\\
+	Questa funzione si occupa di creare la miniatura e inserirla nella lista in base ai parametri \texttt{type} e \texttt{num} che compongono il nome del template.
+\end{itemize}
+
 \section{Visualizzazione template selezionato}
+In questa sezione viene descritto il comportamento previsto e le finzioni individuate per la gestione del \textit{view-box} che andrà a visualizzare il template selezionato.\\
+Alla base del \textit{view-box} c'è un elemento HTML di tipo \texttt{div} con id \texttt{"tml-anchor"} che farà da contenitore per i template.\\
+Ogni miniatura presente nella lista in seguito all'evento \texttt{click()} invoca una funzione che si occupa di visualizzare il template nel \textit{view-box}.
+\begin{itemize}
+	\item \texttt{selectTml(el)}\\
+	Questa funzione riceve il nome del template da caricare dal parametro \texttt{el} ed in seguito si occupa di effettuare il caricamento delle risorse e il rendering del template nel \texttt{div} prestabilito.
+\end{itemize}
 \section{Editor per la modifica del template}

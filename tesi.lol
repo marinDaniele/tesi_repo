@@ -33,6 +33,16 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {6.1}Esempio di richiesta http-get su /templates/\{tipo+indice\}/\{tipo+indice\}.html.}{30}{lstlisting.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {6.2}Esempio di oggetto JSON restituito.}{30}{lstlisting.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {6.3}Esempio di oggetto JSON restituito.}{31}{lstlisting.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {6.4}Esempio array \texttt {libs}.}{32}{lstlisting.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {6.5}Struttura oggetto \texttt {templatesToLoad}.}{32}{lstlisting.6.5}
+\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
