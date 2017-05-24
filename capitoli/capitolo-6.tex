@@ -25,7 +25,7 @@ Le risorse necessarie sono reperibili tramite chiamata \textit{http-get} ad un U
 
 \subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}
 Restituisce il file HTML che descrive il template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
-\begin{lstlisting}[language=HTML, caption=Esempio di richiesta http-get su /templates/\{tipo+indice\}/\{tipo+indice\}.html.]
+\begin{lstlisting}[language=HTML, caption=Esempio di template mustache restituito.]
 <div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
 
 	<img class="image" src= {{ img ? img : 'templates/tml1/img/no-image.png'}}>
@@ -137,7 +137,7 @@ La scelta di definire questo oggetto nasce dal fatto che non sono presenti API p
 	La sua struttura è formata da coppie del tipo \textit{chiave-valore} che rappresentano rispettivamente:
 	\begin{itemize}
 		\item \textbf{chiave} definisce il tipo dei template;
-		\item \textbf{valore} contiene il numero dei template di tipo chiave.
+		\item \textbf{valore} contiene il numero dei template di quel tipo.
 	\end{itemize}
 	L'oggetto è rappresentato come segue:
 	\begin{lstlisting}[language=JSON, caption= Struttura oggetto \texttt{templatesToLoad}.]
@@ -158,7 +158,7 @@ La scelta di definire questo oggetto nasce dal fatto che non sono presenti API p
 \end{itemize}
 
 \section{Visualizzazione template selezionato}
-In questa sezione viene descritto il comportamento previsto e le finzioni individuate per la gestione del \textit{view-box} che andrà a visualizzare il template selezionato.\\
+In questa sezione viene descritto il comportamento previsto e le funzioni individuate per la gestione del \textit{view-box} che andrà a visualizzare il template selezionato.\\
 Alla base del \textit{view-box} c'è un elemento HTML di tipo \texttt{div} con id \texttt{"tml-anchor"} che farà da contenitore per i template.\\
 Ogni miniatura presente nella lista in seguito all'evento \texttt{click()} invoca una funzione che si occupa di visualizzare il template nel \textit{view-box}.
 \begin{itemize}
@@ -166,3 +166,34 @@ Ogni miniatura presente nella lista in seguito all'evento \texttt{click()} invoc
 	Questa funzione riceve il nome del template da caricare dal parametro \texttt{el} ed in seguito si occupa di effettuare il caricamento delle risorse e il rendering del template nel \texttt{div} prestabilito.
 \end{itemize}
 \section{Editor per la modifica del template}
+In seguito alla selezione di un template questo deve essere visualizzato e sulla base dei suoi dati modificabili deve essere costruito un editor che ne permetta la modifica.\\
+In questa sezione vengono descritte le funzioni che si occupano di creare l'editor per la modifica dei dati del template.\\
+La creazione dell'editor nelle sue diverse versioni (per template semplici e composti) viene gestita dalle seguenti funzioni:
+\begin{itemize}
+	\item \texttt{creaTml(type,dati)}\\
+	Questa funzione riceve il tipo del template selezionato tramite il parametro \texttt{type} e l'oggetto JSON contenente i dati del tramite il parametro \texttt{dati}.\\
+	La funzione costruisce l'editor in base al tipo del template, utilizzando le funzioni \texttt{creaEditorFullJson( dati, editorAnchor )} e \\ \texttt{creaEditor( dati, editorAnchor )} che verranno descritte in seguito.
+	
+	\item \texttt{creaEditorFullJson(obj, el)}\\
+	Questa funzione è rivolta ai template di tipo \textit{composto} e si occupa di creare un area editabile contenete il codice che descrive l'oggetto JSON fornito con il parametro \texttt{obj} e ne permette la modifica.\\
+	Gli elementi creati dalla funzione vengono inseriti nell'elemento HTML con id \texttt{el}.
+	
+	\newpage
+	\item \texttt{creaEditor(obj, el)}\\
+	Questa funzione è rivolta ai template di tipo \textit{semplice} e si occupa di creare l'editor contenente tutti gli strumenti per la modifica di ogni dato all'interno del parametro \texttt{obj}.\\
+	L'editor viene inserito all'interno dell'elemento HTML con id \texttt{el} indicando il nome del dato seguito dallo strumento per la sua modifica.\\
+	Durante la creazione dell'editor viene utilizza la funzione \texttt{parse} per la costruzione dei vari strumenti che andranno a comporre l'editor.
+	
+	\item \texttt{parse( obj, el, index, regExpArray, path )}\\
+	Gli strumenti creati dalla funzione offrono la possibilità di modifica per i dati di tipo:
+	\begin{itemize}
+		\item \textbf{colore} tramite color picker;
+		\item \textbf{numero} tramite input number;
+		\item \textbf{booleano} tramite combobox (true,false);
+		\item \textbf{immagine} tramite selettore di immagini da file-system;
+		\item \textbf{url} tramite line-edit;
+		\item \textbf{mail} tramite line-edit;
+		\item \textbf{sringa breve} tramite line-edit;
+		\item \textbf{testo} tramite text-area;
+	\end{itemize}
+\end{itemize}
