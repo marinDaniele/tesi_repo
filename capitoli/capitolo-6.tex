@@ -80,7 +80,6 @@ Restituisce l'oggetto JSON contenente i dati del template, nel caso in cui l'ope
 	"img": string,
 	"prezzo": number,
 	"quantita": number,
-	"descrizione": string
 }
 \end{lstlisting}
 \subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}\_libs.json}
@@ -128,8 +127,9 @@ Per effettuare questa operazione sono state definite le seguenti funzioni:
 \section{Creazione lista template}
 In questa sezione vengono descritte le funzioni che si occupano della creazione della lista di selezione dei template.\\
 Questa lista deve essere composta dalle miniature dei template suddivise fra le quattro categorie descritte in precedenza.\\
-Per poter effettuare il caricamento è necessario definire un oggetto JavaScript che contenga il numero di template disponibili al caricamento suddivisi per categoria.\\
-La scelta di definire questo oggetto nasce dal fatto che non sono presenti API per ottenere informazioni sui template, quindi data la struttura del file-system e il fatto che i template sono indicizzati in maniera ordinata è possibile utilizzare un oggetto per descrivere l'insieme dei template da caricare.\\
+Per poter effettuare il caricamento è necessario definire un oggetto JavaScript che contenga il numero di template disponibili suddivisi per categoria.\\
+La scelta di definire questo oggetto è stata dettata dalla necessità di conoscere l'insieme dei template disponibili.\\
+Data la struttura del file-system e il fatto che i template sono indicizzati in maniera ordinata è possibile descrivere l'insieme dei template da caricare tramite un oggetto JavaScript.\\
 
 \begin{itemize}
 	\item \texttt{templatesToLoad}\\
@@ -185,6 +185,7 @@ La creazione dell'editor nelle sue diverse versioni (per template semplici e com
 	Durante la creazione dell'editor viene utilizza la funzione \texttt{parse} per la costruzione dei vari strumenti che andranno a comporre l'editor.
 	
 	\item \texttt{parse( obj, el, index, regExpArray, path )}\\
+	Questa funzione riceve l'oggetto JSON tramite il parametro \texttt{obj} e utilizzando i parametri \texttt{index}, \texttt{regExpArray} e \texttt{path} come controllo, crea lo strumento più adeguato per ogni tipo di dato individuato aggiungendo ognuno di essi all'elemento HTML con id \texttt{el}.\\
 	Gli strumenti creati dalla funzione offrono la possibilità di modifica per i dati di tipo:
 	\begin{itemize}
 		\item \textbf{colore} tramite color picker;
