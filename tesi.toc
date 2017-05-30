@@ -130,20 +130,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}Il caricamento dei template}{35}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{35}{section.7.2}
+\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{37}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{35}{section.7.3}
+\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{37}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{35}{section.7.4}
+\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{37}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{35}{section.7.5}
+\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{37}{section.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{37}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusioni}{39}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{37}{section.8.1}
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{39}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{37}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{39}{subsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{37}{section.8.2}
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{39}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{37}{section.8.3}
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{39}{section.8.3}

@@ -12,8 +12,76 @@ Durante questa fase il lavoro svolto è stato proposto al tutor aziendale in pi�
 %**************************************************************
 
 \section{Il caricamento dei template}
+Il caricamento dei template consiste in tre fasi, che sono:
+\begin{itemize}
+	\item caricamento delle risorse;
+	\item creazione istanza \textit{Ractive};
+	\item rendering del template all'interno di un elemento HTML.
+\end{itemize}
+Per effettuare il caricamento delle risorse sono stati utilizzati due metodi differenti in base al tipo di file da caricare.\\
+Il caricamento degli oggetti di tipo JSON, come i dati e l'elenco delle librerie JQuery del template, è stato effettuato tramite un metodo offerto dalla libreria JQuery, che permette di effettuare una \textit{GET HTTP request} per il caricamento specifico di oggetti JSON.\\
+Il metodo in questione è \href{http://api.jquery.com/jquery.getjson/}{\texttt{jQuery.getJSON()}} che effettua una \textit{callback} ad un URL e ritorna l'oggetto desiderato.\\
+Per effettuare il caricamento del template mustache invece, la comunità di Ractive offre un plug-in chiamato \textit{ractive-load} che aggiunge un metodo statico alla libreria e permette, tramite la \href{http://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects}{\textit{promise}} \href{https://github.com/ractivejs/ractive-load}{\texttt{Ractive.load()}} di effettuare il caricamento del file contenente la definizione del template utilizzando \textit{GET HTTP request}.
+\newpage
+\begin{lstlisting}[language=JavaScript, caption=Chiamate \textit{GET HTTP} per il caricamento delle risorse.]
+// carico i dati del template
+$.getJSON(dataUrl, function(dati) { // se il caricamento ha successo
+	// carico il template tramite Ractive.load
+	Ractive.load(tmlUrl).then( function(Template) {
+		// creo l'oggetto ractive
+		var ractive = new Template({
+			el: tmlAnchor,
+			data: dati
+		});
+	...
+
+	});
+})
+.fail( function() { // errore caricamento, file non valido
+	console.log('file non trovato o errore di caricamento!');
+});
+\end{lstlisting}
+Le richieste vengono eseguite in modo asincrono, quindi solamente l'esito positivo della prima \textit{callback} permette l'esecuzione della chiamata a \texttt{Ractive.load()} e l'eventuale istanziazione dell'oggetto \textit{Ractive}.\\
+Per quanto riguarda il caricamento di template contenenti plug-in JQuery, il metodo è identico, ma prima di caricare i dati ed il template devono essere caricate le librerie.\\
+Il caricamento delle librerie viene effettuato tramite \texttt{JQuery.getJSON()} del file contenente la lista delle librerie e aggiungendo le URL di quest'ultime all'\texttt{header} della pagina dell'applicazione tramite la creazione di un tag \texttt{script} per ogni libreria individuata.\\
+\begin{lstlisting}[language=JavaScript, caption=Esempio aggiunta librerie all'HTML dell'applicazione.]
+// carico le librerie del template
+$.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
+	// aggiungo le librerie alla pagina HTML
+	scriptControll.loadLibs(libs);
+
+	// carico i dati del template
+	$.getJSON(dataUrl, function(dati) { // se il caricamento ha successo
+		...
+		// istanziazione oggetto ractive
+})
+.fail( function() { // librerie non trovate o errore di caricamento
+	console.log('file non trovato o errore di caricamento!');
+
+// esempio oggetto JSON delle librerie
+{
+	"libs": [
+		"templates/jtml1/lib/actuate-animate.min.js",
+		"templates/jtml1/lib/jquery.drawsvg.min.js"
+	]
+}
+// esempio aggiunta script all'HTML
+<head>
+		...
+	<!-- script aggiunti -->
+	<script src="templates/jtml1/lib/actuate-animate.min.js"></script>
+	<script src="templates/jtml1/lib/jquery.drawsvg.min.js"></script>
+
+</head>
+
+\end{lstlisting}
+Per i template con plug-in JQuery il problema principale è quello che il template venga renderizzato prima del caricamento delle librerie, questo comporta il non riconoscimento delle funzioni che si riferiscono al plug-in rendendo il template incompleto.\\
+Quindi il caricamento delle librerie viene eseguito sempre prima di caricare gli altri elementi del template.\\
+Nonostante questa accortezza risulta impossibile verificare l'effettivo caricamento da parte del \textit{browser} delle librerie perché esso viene effettuato in modo asincrono.\\
+Questo problema può essere risolto in maniera semplice con un \textit{reload} della pagina o come è stato fatto in un fork dell'applicazione tramite un \textit{preload} di tutte le librerie, che però risulta una soluzione molto onerosa e in certi casi non risolve il problema.
 
 \section{Controllo delle librerie caricate}
+
 
 \section{Visualizzatore lista template}
 

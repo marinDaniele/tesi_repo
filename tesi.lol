@@ -45,4 +45,8 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {7.1}Chiamate \textit {GET HTTP} per il caricamento delle risorse.}{36}{lstlisting.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {7.2}Esempio aggiunta librerie all'HTML dell'applicazione.}{36}{lstlisting.7.2}
+\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
