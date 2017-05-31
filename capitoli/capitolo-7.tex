@@ -21,7 +21,7 @@ Il caricamento dei template consiste in tre fasi, che sono:
 Per effettuare il caricamento delle risorse sono stati utilizzati due metodi differenti in base al tipo di file da caricare.\\
 Il caricamento degli oggetti di tipo JSON, come i dati e l'elenco delle librerie JQuery del template, è stato effettuato tramite un metodo offerto dalla libreria JQuery, che permette di effettuare una \textit{GET HTTP request} per il caricamento specifico di oggetti JSON.\\
 Il metodo in questione è \href{http://api.jquery.com/jquery.getjson/}{\texttt{jQuery.getJSON()}} che effettua una \textit{callback} ad un URL e ritorna l'oggetto desiderato.\\
-Per effettuare il caricamento del template mustache invece, la comunità di Ractive offre un plug-in chiamato \textit{ractive-load} che aggiunge un metodo statico alla libreria e permette, tramite la \href{http://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects}{\textit{promise}} \href{https://github.com/ractivejs/ractive-load}{\texttt{Ractive.load()}} di effettuare il caricamento del file contenente la definizione del template utilizzando \textit{GET HTTP request}.
+Per effettuare il caricamento del template mustache invece, la comunità di Ractive offre un plug-in chiamato \texttt{ractive-load}\footnote{\url{https://github.com/ractivejs/ractive-load}} che aggiunge un metodo statico alla libreria e permette, tramite la  \textit{promise}\footnote{\url{http://www.ecma-international.org/ecma-262/6.0/\#sec-promise-objects}} \texttt{Ractive.load()} di effettuare il caricamento del file contenente la definizione del template utilizzando \textit{GET HTTP request}.
 \newpage
 \begin{lstlisting}[language=JavaScript, caption=Chiamate \textit{GET HTTP} per il caricamento delle risorse.]
 // carico i dati del template
@@ -44,7 +44,7 @@ $.getJSON(dataUrl, function(dati) { // se il caricamento ha successo
 Le richieste vengono eseguite in modo asincrono, quindi solamente l'esito positivo della prima \textit{callback} permette l'esecuzione della chiamata a \texttt{Ractive.load()} e l'eventuale istanziazione dell'oggetto \textit{Ractive}.\\
 Per quanto riguarda il caricamento di template contenenti plug-in JQuery, il metodo è identico, ma prima di caricare i dati ed il template devono essere caricate le librerie.\\
 Il caricamento delle librerie viene effettuato tramite \texttt{JQuery.getJSON()} del file contenente la lista delle librerie e aggiungendo le URL di quest'ultime all'\texttt{header} della pagina dell'applicazione tramite la creazione di un tag \texttt{script} per ogni libreria individuata.\\
-\begin{lstlisting}[language=JavaScript, caption=Esempio aggiunta librerie all'HTML dell'applicazione.]
+\begin{lstlisting}[language=JavaScript, caption=Codice per l'aggiunta delle librerie più esempio di JSON e risultato ottenuto.]
 // carico le librerie del template
 $.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
 	// aggiungo le librerie alla pagina HTML
@@ -57,21 +57,21 @@ $.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
 })
 .fail( function() { // librerie non trovate o errore di caricamento
 	console.log('file non trovato o errore di caricamento!');
-
-// esempio oggetto JSON delle librerie
+///////////////////////////////////////////////////////////////////////
+// esempio oggetto JSON contenente le URL delle librerie
 {
 	"libs": [
 		"templates/jtml1/lib/actuate-animate.min.js",
 		"templates/jtml1/lib/jquery.drawsvg.min.js"
 	]
 }
-// esempio aggiunta script all'HTML
+///////////////////////////////////////////////////////////////////////
+// esempio di risultato prodotto nell'HTML
 <head>
 		...
 	<!-- script aggiunti -->
 	<script src="templates/jtml1/lib/actuate-animate.min.js"></script>
 	<script src="templates/jtml1/lib/jquery.drawsvg.min.js"></script>
-
 </head>
 
 \end{lstlisting}
@@ -80,11 +80,67 @@ Quindi il caricamento delle librerie viene eseguito sempre prima di caricare gli
 Nonostante questa accortezza risulta impossibile verificare l'effettivo caricamento da parte del \textit{browser} delle librerie perché esso viene effettuato in modo asincrono.\\
 Questo problema può essere risolto in maniera semplice con un \textit{reload} della pagina o come è stato fatto in un fork dell'applicazione tramite un \textit{preload} di tutte le librerie, che però risulta una soluzione molto onerosa e in certi casi non risolve il problema.
 
-\section{Controllo delle librerie caricate}
+\subsection{Controllo delle librerie caricate}
+Uno dei problemi che è sorto durante lo sviluppo relativo al caricamento delle librerie, per i template con plug-in JQuery, è quello di effettuare il caricamento di una o più librerie che erano già state caricate in precedenza.\\
+Questo comporta la manipolazione inutile del \textit{DOM}, quindi una quantità maggiore di carico per il \textit{browser}.\\
+Il problema è stato risolto effettuando un controllo tramite l'implementazione della funzione \texttt{confrontaScript()} che mette a confronto gli script presenti nella pagina HTML dell'applicazione con la libreria da caricare e nel caso in cui esse sia già presente non effettua nessuna manipolazione del \textit{DOM}.\\
+Questa funzione viene invocata dalla funzione \texttt{addLibraryFromUrl()} per ogni URL presente nel JSON ogni qual volta venga caricato un template contenente plug-in.
+\begin{lstlisting}[language= JavaScript, caption= Funzione che gestisce il caricamento di una libreria.]
+confrontaScript(library) {
+	var scriptArray = document.scripts; // array degli script caricati
+	var trovato = false;
+	for (var i = 0; i < scriptArray.length && !trovato; i++) {
+		var scriptUrl = scriptArray[i].attributes.src.value;
+		var scriptName = scriptUrl.slice( scriptUrl.lastIndexOf('/')+1, scriptUrl.length);
+		if (scriptName === library) {
+			trovato = true;
+			//console.log('lo script '+library+' è già presente!');
+		}
+	}
+	return trovato;
+}
 
+\end{lstlisting}
 
 \section{Visualizzatore lista template}
+Dopo aver sviluppato le funzioni per il caricamento dei template è iniziata la fase di realizzata della parte dell'applicazione adibita alla visualizzazione della lista dei template disponibili.\\
+Il problema che si è presentato prima di iniziare lo sviluppo è stato quello di scegliere quali elementi utilizzare per creare la lista.\\
+La scelta più adeguata in questo caso sarebbe stata quella di caricare una lista di thumbnail (miniature) rappresentanti i vari template disponibili.\\
+Questa decisione però, pur essendo la più efficiente, è stata scartata perché avrebbe richiesto la creazione di tutte le miniature e l'aggiornamento delle directory dei template.\\
+Per questioni di tempo è stato deciso di caricare direttamente i template nella lista, visto che l'efficienza non era uno dei requisiti importanti per il tutor.\\
+Dopo aver discusso il problema e definito il modo di procedere è iniziato lo sviluppo di questa sezione dell'applicazione.\\
+La costruzione della lista viene effettuata creando i vari elementi HTML che formano la lista in modo sequenziale e inserendoli nell'elemento \texttt{<ul>} presente nella pagina HTML predisposto a contenerli.\\
+Questa operazione viene effettuata dalle funzioni \texttt{createTemplateList()}, che tramite l'oggetto \hyperref[ttlObject]{\texttt{templatesToLoad}} si occupa di suddividere la lista fra le varie tipologie di template, e \texttt{loadTemplateList()}, che crea l'elemento \texttt{<li>} dedicato a contenere il template.\\
+Una volta aggiunto il \textit{list item} alla lista viene invocata una delle due funzioni per il caricamento del template in base al tipo.\\
+Il rendering viene effettuato all'interno dell'elemento \texttt{<li>} creato in precedenza utilizzando il suo id (creato in maniera univoca) come parametro di ancoraggio per l'oggetto \textit{Ractive} rappresentante il template.
+\begin{lstlisting}[language=JavaScript, caption=Implementazione \texttt{loadTemplateList().}]
+function loadTemplateList(type, num) {
+	// per ogni tipo di template li carico tutti
+	for (var i = 1; i < num+1; i++) {
+		// creo list item ancora
+		var listItem = "<li class='tml-list-item' ><div class='tml-list-item-div'><a class='tml-list-item-a' onclick='selectTml(this)' href='javascript:void(0)' id='"+type+i+"'></a></div></li>";
+		// appendo l'elemento alla lista
+		$('#tml-list').append(listItem);
 
+		var anchor = '#'+type+i;
+		// creo l'oggetto ractive col template relativo
+		if (type === 'tml' || type === 'ctml') { // template senza jQuery
+			var html = 'templates/'+type+i+'/'+type+i+'.html';
+			var dati = 'templates/'+type+i+'/'+type+i+'.json';
+			// carico il template
+			tl.loadTemplateWithoutJQuery(html, dati, anchor);
+		}
+		else if (type === 'jtml' || type === 'jctml') { // template senza jQuery
+			var html = 'templates/'+type+i+'/'+type+i+'.html';
+			var dati = 'templates/'+type+i+'/'+type+i+'.json';
+			var libs = 'templates/'+type+i+'/'+type+i+'_libs.json';
+			// carico il template
+			tl.loadTemplateWithJQueryPlugins(html, dati, libs, anchor);
+		}
+
+	}
+}
+\end{lstlisting}
 \section{Visualizzatore template selezionato}
 
 \section{Editor per la manipolazione del template}

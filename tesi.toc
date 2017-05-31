@@ -130,13 +130,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}Il caricamento dei template}{35}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Controllo delle librerie caricate}{37}{section.7.2}
+\contentsline {subsection}{\numberline {7.1.1}Controllo delle librerie caricate}{37}{subsection.7.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore lista template}{37}{section.7.3}
+\contentsline {section}{\numberline {7.2}Visualizzatore lista template}{37}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Visualizzatore template selezionato}{37}{section.7.4}
+\contentsline {section}{\numberline {7.3}Visualizzatore template selezionato}{38}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Editor per la manipolazione del template}{37}{section.7.5}
+\contentsline {section}{\numberline {7.4}Editor per la manipolazione del template}{38}{section.7.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusioni}{39}{chapter.8}
 \defcounter {refsection}{0}\relax 

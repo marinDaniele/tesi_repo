@@ -47,6 +47,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {7.1}Chiamate \textit {GET HTTP} per il caricamento delle risorse.}{36}{lstlisting.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.2}Esempio aggiunta librerie all'HTML dell'applicazione.}{36}{lstlisting.7.2}
+\contentsline {lstlisting}{\numberline {7.2}Codice per l'aggiunta delle librerie pi\IeC {\`u} esempio di JSON e risultato ottenuto.}{36}{lstlisting.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {7.3}Funzione che gestisce il caricamento di una libreria.}{37}{lstlisting.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {7.4}Implementazione \texttt {loadTemplateList().}}{38}{lstlisting.7.4}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
