@@ -43,7 +43,7 @@ $.getJSON(dataUrl, function(dati) { // se il caricamento ha successo
 \end{lstlisting}
 Le richieste vengono eseguite in modo asincrono, quindi solamente l'esito positivo della prima \textit{callback} permette l'esecuzione della chiamata a \texttt{Ractive.load()} e l'eventuale istanziazione dell'oggetto \textit{Ractive}.\\
 Per quanto riguarda il caricamento di template contenenti plug-in JQuery, il metodo è identico, ma prima di caricare i dati ed il template devono essere caricate le librerie.\\
-Il caricamento delle librerie viene effettuato tramite \texttt{JQuery.getJSON()} del file contenente la lista delle librerie e aggiungendo le URL di quest'ultime all'\texttt{header} della pagina dell'applicazione tramite la creazione di un tag \texttt{script} per ogni libreria individuata.\\
+Il caricamento delle librerie viene effettuato tramite \texttt{JQuery.getJSON()} del file contenente la lista delle librerie e aggiungendo le URL di quest'ultime all'\texttt{header} dell'applicazione tramite la creazione di un tag \texttt{script} per ogni libreria individuata.\\
 \begin{lstlisting}[language=JavaScript, caption=Codice per l'aggiunta delle librerie più esempio di JSON e risultato ottenuto.]
 // carico le librerie del template
 $.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
@@ -81,10 +81,10 @@ Nonostante questa accortezza risulta impossibile verificare l'effettivo caricame
 Questo problema può essere risolto in maniera semplice con un \textit{reload} della pagina o come è stato fatto in un fork dell'applicazione tramite un \textit{preload} di tutte le librerie, che però risulta una soluzione molto onerosa e in certi casi non risolve il problema.
 
 \subsection{Controllo delle librerie caricate}
-Uno dei problemi che è sorto durante lo sviluppo relativo al caricamento delle librerie, per i template con plug-in JQuery, è quello di effettuare il caricamento di una o più librerie che erano già state caricate in precedenza.\\
+Uno dei problemi che è sorto durante lo sviluppo in relazione al caricamento delle librerie per i template con plug-in JQuery, è quello di effettuare il caricamento di una o più librerie già caricate in precedenza.\\
 Questo comporta la manipolazione inutile del \textit{DOM}, quindi una quantità maggiore di carico per il \textit{browser}.\\
-Il problema è stato risolto effettuando un controllo tramite l'implementazione della funzione \texttt{confrontaScript()} che mette a confronto gli script presenti nella pagina HTML dell'applicazione con la libreria da caricare e nel caso in cui esse sia già presente non effettua nessuna manipolazione del \textit{DOM}.\\
-Questa funzione viene invocata dalla funzione \texttt{addLibraryFromUrl()} per ogni URL presente nel JSON ogni qual volta venga caricato un template contenente plug-in.
+Il problema è stato risolto effettuando un controllo tramite l'implementazione della funzione \texttt{confrontaScript()} che utilizza il metodo \texttt{document.scripts} per ricavare la lista delle librerie caricate dall'applicazione e tramite un confronto con essa decide se sia necessario aggiungere la nuova libreria o meno.\\
+Questa funzione viene invocata dalla funzione \texttt{addLibraryFromUrl()} per ogni URL presente nel JSON, ogni qual volta venga caricato un template contenente plug-in.
 \begin{lstlisting}[language= JavaScript, caption= Funzione che gestisce il caricamento di una libreria.]
 confrontaScript(library) {
 	var scriptArray = document.scripts; // array degli script caricati
@@ -103,15 +103,14 @@ confrontaScript(library) {
 \end{lstlisting}
 
 \section{Visualizzatore lista template}
-Dopo aver sviluppato le funzioni per il caricamento dei template è iniziata la fase di realizzata della parte dell'applicazione adibita alla visualizzazione della lista dei template disponibili.\\
+Dopo aver sviluppato le funzioni per il caricamento dei template è iniziata la fase di realizzazione della sezione adibita alla visualizzazione della lista dei template disponibili.\\
 Il problema che si è presentato prima di iniziare lo sviluppo è stato quello di scegliere quali elementi utilizzare per creare la lista.\\
 La scelta più adeguata in questo caso sarebbe stata quella di caricare una lista di thumbnail (miniature) rappresentanti i vari template disponibili.\\
 Questa decisione però, pur essendo la più efficiente, è stata scartata perché avrebbe richiesto la creazione di tutte le miniature e l'aggiornamento delle directory dei template.\\
 Per questioni di tempo è stato deciso di caricare direttamente i template nella lista, visto che l'efficienza non era uno dei requisiti importanti per il tutor.\\
 Dopo aver discusso il problema e definito il modo di procedere è iniziato lo sviluppo di questa sezione dell'applicazione.\\
-La costruzione della lista viene effettuata creando i vari elementi HTML che formano la lista in modo sequenziale e inserendoli nell'elemento \texttt{<ul>} presente nella pagina HTML predisposto a contenerli.\\
+La costruzione della lista viene effettuata creando i vari elementi che la compongono in modo sequenziale e inserendoli all'interno elemento HTML predisposto a contenerli.\\
 Questa operazione viene effettuata dalle funzioni \texttt{createTemplateList()}, che tramite l'oggetto \hyperref[ttlObject]{\texttt{templatesToLoad}} si occupa di suddividere la lista fra le varie tipologie di template, e \texttt{loadTemplateList()}, che crea l'elemento \texttt{<li>} dedicato a contenere il template.\\
-Una volta aggiunto il \textit{list item} alla lista viene invocata una delle due funzioni per il caricamento del template in base al tipo.\\
 Il rendering viene effettuato all'interno dell'elemento \texttt{<li>} creato in precedenza utilizzando il suo id (creato in maniera univoca) come parametro di ancoraggio per l'oggetto \textit{Ractive} rappresentante il template.
 \begin{lstlisting}[language=JavaScript, caption=Implementazione \texttt{loadTemplateList().}]
 function loadTemplateList(type, num) {
@@ -142,5 +141,33 @@ function loadTemplateList(type, num) {
 }
 \end{lstlisting}
 \section{Visualizzatore template selezionato}
+In questa fase di sviluppo è stata realizzata la \textit{view} dedicata alla visualizzazione del template selezionato.\\
+Per effettua la visualizzazione è stato necessario:
+\begin{itemize}
+	\item individuare il template selezionato all'interno della lista;
+	\item create un'istanza \textit{Ractive} che lo rappresenti;
+	\item renderizzare il template all'interno della \textit{view}.
+\end{itemize}
+Per individuare il template selezionato è stato implementato l'evento \texttt{onclick} dei vari elementi appartenenti alla lista in modo che richiamino la funzione \texttt{selectTml()} passandogli il riferimento all'elemento che ha lanciato l'evento.\\
+Dal riferimento è possibile risalire al nome del template da visualizzare e quindi creare un oggetto \textit{Ractive} che verrà renderizzato all'interno della \textit{view}.\\
+Nel momento in cui viene visualizzato il template, viene richiamata la funzione che si occupa della costruzione del relativo editor, il cui sviluppo verrà descritto nella sezione seguente.
+\begin{lstlisting}[language=HTML, caption=Chiamata di \texttt{selectTml()} all'evento \texttt{onclick} del list item.]
+<li class='tml-list-item' >
+	<div class='tml-list-item-div'>
+		<a class='tml-list-item-a' onclick='selectTml(this)' href='javascript:void(0)' id='"+type+i+"'></a>
+	</div>
+</li>
+\end{lstlisting}
+Le modifiche ai dati sono visualizzate in tempo reale poiché la libreria \textit{Ractive.js} si occupa di effettuare l'update del render in maniera automatica.
 
 \section{Editor per la manipolazione del template}
+La realizzazione dell'editor per la modifica dei dati conclude la fase di sviluppo.\\
+L'applicazione deve fornire un editor adeguato ad ogni possibile template, quindi risulta necessario individuare i dati modificabili del template e il loro tipo per poter fornire gli strumenti adeguati per la loro modifica.\\
+Durante questa fase sono state individuate varie soluzioni per risolvere questo problema.\\
+Una di queste consisteva nell'effettuare il parsing del \textit{DOM} del template, individuando il tipo del dato da modificare in base al \textit{tag} HTML che lo conteneva.\\
+Questa soluzione è stata scartata perché troppo onerosa da implementare e perché certi dati all'interno del template potevano essere frutto di espressioni o di funzioni implementate nella logica del template fatto non deducibili da un parsing del \textit{DOM}.\\
+La soluzione individuata consiste nell'effettuare il parsing dell'oggetto JSON contenente i dati del template, questo offre la sicurezza sulla quantità di dati modificabili, ma fa sorgere un'altro problema.\\
+Il problema riscontrato consiste nel non poter rilevare vari tipi tra quelli descritti nella sezione \textit{Analisi dei requisiti}, come, per esempio i tipi \texttt{colore}, \texttt{immagine}, \texttt{URL}, perché non rappresentabili in un oggetto JSON.\\
+Dato che il problema si presenta solamente con dati del tipo \texttt{string}, come soluzione è stato implementato un metodo di individuazione del tipo che consiste nel confrontare il dato con espressioni regolari create appositamente per distinguere i vari tipi.\\
+Utilizzando questo metodo risulta possibile creare per ogni dato lo strumento adatto alla sua manipolazione.\\
+%spiegazione funzionamento editor

@@ -53,4 +53,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {7.4}Implementazione \texttt {loadTemplateList().}}{38}{lstlisting.7.4}
 \defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {7.5}Chiamata di \texttt {selectTml()} all'evento \texttt {onclick} del list item.}{39}{lstlisting.7.5}
+\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
