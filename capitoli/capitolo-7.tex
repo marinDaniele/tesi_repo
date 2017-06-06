@@ -165,9 +165,88 @@ La realizzazione dell'editor per la modifica dei dati conclude la fase di svilup
 L'applicazione deve fornire un editor adeguato ad ogni possibile template, quindi risulta necessario individuare i dati modificabili del template e il loro tipo per poter fornire gli strumenti adeguati per la loro modifica.\\
 Durante questa fase sono state individuate varie soluzioni per risolvere questo problema.\\
 Una di queste consisteva nell'effettuare il parsing del \textit{DOM} del template, individuando il tipo del dato da modificare in base al \textit{tag} HTML che lo conteneva.\\
-Questa soluzione è stata scartata perché troppo onerosa da implementare e perché certi dati all'interno del template potevano essere frutto di espressioni o di funzioni implementate nella logica del template fatto non deducibili da un parsing del \textit{DOM}.\\
+Questa soluzione è stata scartata perché troppo onerosa da implementare e perché certi dati all'interno del template potevano essere frutto di espressioni o di funzioni implementate nella logica del template, fatto non deducibile da un parsing del \textit{DOM}.\\
 La soluzione individuata consiste nell'effettuare il parsing dell'oggetto JSON contenente i dati del template, questo offre la sicurezza sulla quantità di dati modificabili, ma fa sorgere un'altro problema.\\
-Il problema riscontrato consiste nel non poter rilevare vari tipi tra quelli descritti nella sezione \textit{Analisi dei requisiti}, come, per esempio i tipi \texttt{colore}, \texttt{immagine}, \texttt{URL}, perché non rappresentabili in un oggetto JSON.\\
-Dato che il problema si presenta solamente con dati del tipo \texttt{string}, come soluzione è stato implementato un metodo di individuazione del tipo che consiste nel confrontare il dato con espressioni regolari create appositamente per distinguere i vari tipi.\\
-Utilizzando questo metodo risulta possibile creare per ogni dato lo strumento adatto alla sua manipolazione.\\
-%spiegazione funzionamento editor
+Il problema riscontrato consiste nel non poter rilevare vari tipi tra quelli descritti nella sezione \textit{Analisi dei requisiti}, come, per esempio i tipi \texttt{colore}, \texttt{immagine}, \texttt{URL}, perché non presenti fra i tipi primitivi in un oggetto JSON.\\
+\subsection{Creazione dell'editor}
+La realizzazione dell'editor viene effettuata dalla funzione \texttt{creaTml()} che, in base al tipo di template, decide se creare un editor per template semplici o composti.\\
+Per template composti è stata implementata la funzione \texttt{creaEditorFullJson()} che si occupa di creare una \textit{text-area} contenente l'oggetto JSON e ne permette la modifica direttamente da codice.\\
+Lo sviluppo dell'editor per i template semplici, che viene effettuato dalla funzione \texttt{creaEditor()}, è stato più complesso perché ha richiesto l'individuazione del tipo di ogni dato presente nel JSON e la creazione del relativo strumento.\\
+Per effettuare la creazione dei vari strumenti e per individuare i tipi di dato è stata sviluppata la funzione \texttt{parse()} che, in modo ricorsivo, effettua il parse dell'oggetto JSON individuando il tipo dei dati e costruendo per ognuno di essi il relativo strumento di input.\\
+Il problema della rilevazione dei tipi non primitivi è stato risolto tramite il confronto dei dati di tipo \texttt{string} con espressioni regolari che rappresentano i seguenti tipi:
+\begin{itemize}
+	\item \textbf{colore}, rappresentato sia in formato \textit{rgb} che esadecimale;
+	\item \textbf{URL}, rappresentato come url generica a risorse web non di tipo immagine;
+	\item \textbf{mail}, rappresentato come indirizzo di posta elettronica;
+	\item \textbf{immagine}, rappresentato come url a risorse di tipo immagine nei formati \textit{jpg, jpeg, png, gif} e \textit{svg}.
+\end{itemize}
+Nel caso in cui il tipo rilevato sia un immagine viene costruito un input di tipo \textit{input-file} che permette il caricamento di un immagine da file-system.\\
+Mentre per il tipo \textbf{colore} è stato utilizzato il plug-in JQuery \href{http://jscolor.com/}{jscolor}, che permette di visualizzare il colore e propone un utile \textit{color-picker} per effettuarne la modifica.\\
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=1]{../immagini/color_picker}
+	\caption{Color-picker per la modifica dei tipi colore.}
+\end{figure}
+\newpage
+Per la modifica degli altri tipi vengono utilizzati gli strumenti di input forniti dal linguaggio HTML senza ricorrere a librerie esterne.\\
+In seguito viene proposto un estratto della funzione \texttt{parse()}.
+\begin{lstlisting}[language=JavaScript, caption=Estratto della funzione \texttt{parse()}]
+function parse(obj, el, index, regExpArray, path ){
+
+	if (obj == null || obj == undefined) {
+		return;
+	}
+	else {
+
+	for (var k in obj) {
+
+		if (typeof obj[k] === 'string') { // se è una stringa
+			// controllo tramite regExp il tipo della stringa
+			
+			...
+
+			if (pos === 0) { // è una e-mail
+				label = "<label class='json-label'>"+k+": <input type='text' class='json-data-email edit' id='"+path+k+"' value='"+obj[k]+"' ></label><br>";
+			}
+			else if (pos === 1) { // è una URL
+			
+				if ( regExpArray[4].test(obj[k]) ) { // se true è un'immagine
+					label = "<label class='json-label'>"+k+": <input type='file' class='json-data-img edit' id='"+path+k+"' ></label><br>";
+				}
+				else {
+					label = "<label class='json-label'>"+k+": <input type='text' class='json-data-url edit' id='"+path+k+"' value='"+obj[k]+"' ></label><br>";
+				}  
+			}
+			else if (pos === 2 || pos === 3) { // è un colore
+				label =  "<label class='json-label'>"+k+": <span class='pick-color'>pick a color >> <input class='json-data-color jscolor edit' id='"+path+k+"' value='"+obj[k]+"'></span></label><br>";
+			}
+			else{ // è una normale stringa
+				// costruzione input-text o text-area
+				...
+			}
+		}
+
+		else if (typeof obj[k] === 'number') { // se è una numero
+			var label = "<label class='json-label'>"+k+": <input type='number' class='json-data-number edit' id='"+path+k+"' value='"+obj[k]+"' ></label><br>";
+			$(el).append(label);
+		
+		}
+		
+		...
+		
+		// individuazione altri tipi e ricorsione per Array e Object
+		
+		...
+	}
+}
+\end{lstlisting}
+
+\subsection{Modifica dei dati}
+La funzione \texttt{creaTml()} oltre ad occuparsi di creare l'editor giusto per ogni template, si occupa di aggiornare i dati in seguito a una modifica.\\
+La modifica del model del template selezionato avviene tramite l'utilizzo del metodo \texttt{Ractive.set()}, offerto dalla libreria \textit{Ractive.js}.\\
+Questo metodo modifica il model ed in seguito lancia l'evento \textit{update} che comporta il re-rendering del template nella pagina, permettendo la visualizzazione delle modifiche in tempo reale.\\
+
+\subsection{Controllo degli input}
+Prima di invocare la modifica di un dato, in tutti e due i tipi di editor, viene effettuato un controllo sul dato inserito per verificarne la conformità con il tipo richiesto.\\
+Per quanto riguarda i tipi non primitivi, citati in precedenza, vengono utilizzate le espressioni regolari per effettuare il controllo.\\
+Nel caso in cui i dati inseriti non siano corretti viene visualizzato un messaggio di errore tramite un \textit{alert-box}.

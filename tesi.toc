@@ -138,12 +138,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.4}Editor per la manipolazione del template}{39}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{41}{chapter.8}
+\contentsline {subsection}{\numberline {7.4.1}Creazione dell'editor}{39}{subsection.7.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{41}{section.8.1}
+\contentsline {subsection}{\numberline {7.4.2}Modifica dei dati}{42}{subsection.7.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{41}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {7.4.3}Controllo degli input}{42}{subsection.7.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{41}{section.8.2}
+\contentsline {chapter}{\numberline {8}Conclusioni}{43}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{41}{section.8.3}
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{43}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{43}{subsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{43}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{43}{section.8.3}
