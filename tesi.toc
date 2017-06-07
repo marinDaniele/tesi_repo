@@ -148,8 +148,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{43}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{43}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{44}{subsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{43}{section.8.2}
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{44}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{43}{section.8.3}
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{44}{section.8.3}
