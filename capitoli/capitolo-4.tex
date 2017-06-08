@@ -297,7 +297,7 @@ this.addLibraryFromUrl = function(url) {
 }
 \end{lstlisting}
 
-\subsection{Problemi riscontrati}
+\subsection{Problemi riscontrati} \label{subsec: problemi_lib}
 Un problema che è stato rilevato, a riguardo del caricamento di template che utilizzano jQuery consiste nel fatto che il browser effettua il caricamento delle librerie in modo asincrono, quindi non gestibile da parte dello sviluppatore.\\
 Nel caso in cui la libreria non sia ancora stata caricata prima dell'avvenuto rendering del template, si verifica un errore perché le funzioni richiamate non vengono riconosciute.\\
 Il problema riscontrato sarebbe risolvibile se fosse possibile rilevare l'avvenuto caricamento delle risorse richieste, ma momentaneamente i browser non offrono strumenti adeguati.\\
