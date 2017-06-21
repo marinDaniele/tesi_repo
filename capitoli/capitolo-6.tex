@@ -23,8 +23,9 @@ Le quattro categorie vengono nominate come segue:
 \subsection{Accesso alle risorse}
 Le risorse necessarie sono reperibili tramite chiamata \textit{http-get} ad un URL nella forma \texttt{/templates/\{tipo+indice\}/\{tipo+indice\}.estensione}, dove \texttt{tipo} è uno dei quattro tipi descritti in precedenza, \texttt{indice} è il numero che identifica il template.
 
+\newpage
 \subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}
-Restituisce il file HTML che descrive il template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+Restituisce il file HTML che descrive il template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un messaggio \textit{file non trovato}.
 \begin{lstlisting}[language=HTML, caption=Esempio di template mustache restituito.]
 <div id="tml1" style="background-color: {{bgColor}}; color: {{textColor}};">
 
@@ -70,8 +71,10 @@ Restituisce il file HTML che descrive il template, nel caso in cui l'operazione 
 </script>
 \end{lstlisting}
 
+\newpage
 \subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}.json}
-Restituisce l'oggetto JSON contenente i dati del template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+Restituisce l'oggetto JSON contenente i dati del template, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un messaggio \textit{file non trovato}.
+
 \begin{lstlisting}[language=JSON, caption=Esempio di oggetto JSON restituito.]
 {
 	"bgColor":string,
@@ -83,7 +86,7 @@ Restituisce l'oggetto JSON contenente i dati del template, nel caso in cui l'ope
 }
 \end{lstlisting}
 \subsubsection{GET /templates/\{tipo+indice\}/\{tipo+indice\}\_libs.json}
-Restituisce, se il template contiene plug-in, l'oggetto JSON contenente l'URL delle librerie utilizzate, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un mesaggio \textit{file non trovato}.
+Restituisce, se il template contiene plug-in, l'oggetto JSON contenente l'URL delle librerie utilizzate, nel caso in cui l'operazione non vada a buon fine viene lanciato un errore di tipo \texttt{404} e un messaggio \textit{file non trovato}.
 \begin{lstlisting}[language=JSON, caption=Esempio di oggetto JSON restituito.]
 {
 	"libs": [
@@ -140,12 +143,12 @@ Data la struttura del file-system e il fatto che i template sono indicizzati in 
 		\item \textbf{valore} contiene il numero dei template di quel tipo.
 	\end{itemize}
 	L'oggetto è rappresentato come segue:
-	\begin{lstlisting}[language=JSON, caption= Struttura oggetto \texttt{templatesToLoad}.]
+	\begin{lstlisting}[language=JSON, caption=Struttura oggetto \texttt{templatesToLoad}.]
 	{
-		tml: number,
-		jtml: number,
-		ctml: number,
-		jctml: number
+		"tml": number,
+		"jtml": number,
+		"ctml": number,
+		"jctml": number
 	}
 	\end{lstlisting}
 	

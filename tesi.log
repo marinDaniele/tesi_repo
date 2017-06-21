@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  20 JUN 2017 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.17)  21 JUN 2017 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1848,23 +1848,24 @@ Package csquotes Info: Input encoding change on input line 36.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [6]
-<immagini/../immagini/mustache_logo.png, id=375, 276.03125pt x 183.68625pt>
-File: immagini/../immagini/mustache_logo.png Graphic file (type png)
+<immagini/../immagini/mustache_logo_2.png, id=375, 334.24875pt x 253.94875pt>
+File: immagini/../immagini/mustache_logo_2.png Graphic file (type png)
 
-<use immagini/../immagini/mustache_logo.png>
-Package pdftex.def Info: immagini/../immagini/mustache_logo.png used on input l
-ine 67.
-(pdftex.def)             Requested size: 186.0pt x 123.78104pt.
- [7 <./immagini/../immagini/mustache_logo.png>]
-<immagini/../immagini/handlebars_logo.jpg, id=381, 418.56375pt x 121.45375pt>
+<use immagini/../immagini/mustache_logo_2.png>
+Package pdftex.def Info: immagini/../immagini/mustache_logo_2.png used on input
+ line 67.
+(pdftex.def)             Requested size: 147.0699pt x 111.73778pt.
+
+<immagini/../immagini/handlebars_logo.jpg, id=376, 418.56375pt x 121.45375pt>
 File: immagini/../immagini/handlebars_logo.jpg Graphic file (type jpg)
 
 <use immagini/../immagini/handlebars_logo.jpg>
 Package pdftex.def Info: immagini/../immagini/handlebars_logo.jpg used on input
  line 92.
 (pdftex.def)             Requested size: 186.0pt x 53.96982pt.
- [8 <./immagini/../immagini/handlebars_logo.jpg>]
-<immagini/../immagini/ractive_logo2.png, id=386, 513.92pt x 513.92pt>
+ [7 <./immagini/../immagini/mustache_logo_2.png>] [8 <./immagini/../immagini/ha
+ndlebars_logo.jpg>]
+<immagini/../immagini/ractive_logo2.png, id=385, 513.92pt x 513.92pt>
 File: immagini/../immagini/ractive_logo2.png Graphic file (type png)
 
 <use immagini/../immagini/ractive_logo2.png>
@@ -1889,7 +1890,7 @@ File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [13
 
 ]
-<immagini/../immagini/twoWayBinding.png, id=416, 414.04688pt x 176.91093pt>
+<immagini/../immagini/twoWayBinding.png, id=415, 414.04688pt x 176.91093pt>
 File: immagini/../immagini/twoWayBinding.png Graphic file (type png)
 
 <use immagini/../immagini/twoWayBinding.png>
@@ -1902,7 +1903,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--74
  []
 
 
-<immagini/../immagini/fileSistemTemplate.png, id=424, 303.1325pt x 234.8775pt>
+<immagini/../immagini/fileSistemTemplate.png, id=423, 303.1325pt x 234.8775pt>
 File: immagini/../immagini/fileSistemTemplate.png Graphic file (type png)
 
 <use immagini/../immagini/fileSistemTemplate.png>
@@ -1949,14 +1950,14 @@ Package csquotes Info: Input encoding change on input line 170.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [18]
-<immagini/../immagini/screenshot_tml1_1.png, id=501, 651.43375pt x 334.24875pt>
+<immagini/../immagini/screenshot_tml1_1.png, id=500, 651.43375pt x 334.24875pt>
 File: immagini/../immagini/screenshot_tml1_1.png Graphic file (type png)
 <use immagini/../immagini/screenshot_tml1_1.png>
 Package pdftex.def Info: immagini/../immagini/screenshot_tml1_1.png used on inp
 ut line 188.
 (pdftex.def)             Requested size: 260.56888pt x 133.69713pt.
 
-<immagini/../immagini/screenshot_tml1_2.png, id=502, 651.43375pt x 334.24875pt>
+<immagini/../immagini/screenshot_tml1_2.png, id=501, 651.43375pt x 334.24875pt>
 File: immagini/../immagini/screenshot_tml1_2.png Graphic file (type png)
 <use immagini/../immagini/screenshot_tml1_2.png>
 Package pdftex.def Info: immagini/../immagini/screenshot_tml1_2.png used on inp
@@ -1988,7 +1989,7 @@ File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ))
 (./capitoli/capitolo-5.tex [22]
 Capitolo 5.
-<immagini/../immagini/mockup_lista.png, id=581, 150.5625pt x 401.5pt>
+<immagini/../immagini/mockup_lista.png, id=580, 150.5625pt x 401.5pt>
 File: immagini/../immagini/mockup_lista.png Graphic file (type png)
 
 <use immagini/../immagini/mockup_lista.png>
@@ -1998,7 +1999,7 @@ ne 32.
  [23
 
 ]
-<immagini/../immagini/mockup_view.png, id=586, 642.4pt x 401.5pt>
+<immagini/../immagini/mockup_view.png, id=585, 642.4pt x 401.5pt>
 File: immagini/../immagini/mockup_view.png Graphic file (type png)
 
 <use immagini/../immagini/mockup_view.png>
@@ -2007,7 +2008,7 @@ e 41.
 (pdftex.def)             Requested size: 289.07733pt x 180.67332pt.
  [24 <./immagini/../immagini/mockup_lista.png> <./immagini/../immagini/mockup_v
 iew.png>]
-<immagini/../immagini/mockup_editor1.png, id=591, 369.38pt x 466.74374pt>
+<immagini/../immagini/mockup_editor1.png, id=590, 369.38pt x 466.74374pt>
 File: immagini/../immagini/mockup_editor1.png Graphic file (type png)
 
 <use immagini/../immagini/mockup_editor1.png>
@@ -2019,7 +2020,7 @@ Overfull \hbox (43.28096pt too wide) in paragraph at lines 58--59
 [][] 
  []
 
-<immagini/../immagini/mockup_editor2_2.png, id=592, 369.38pt x 466.74374pt>
+<immagini/../immagini/mockup_editor2_2.png, id=591, 369.38pt x 466.74374pt>
 File: immagini/../immagini/mockup_editor2_2.png Graphic file (type png)
 
 <use immagini/../immagini/mockup_editor2_2.png>
@@ -2105,7 +2106,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--125
  []
 
 
-<immagini/../immagini/chart_requisiti_importanza.png, id=607, 534.99875pt x 402
+<immagini/../immagini/chart_requisiti_importanza.png, id=606, 534.99875pt x 402
 .50375pt>
 File: immagini/../immagini/chart_requisiti_importanza.png Graphic file (type pn
 g)
@@ -2125,7 +2126,7 @@ Overfull \hbox (4.97032pt too wide) in paragraph at lines 129--130
  []
 
 
-<immagini/../immagini/chart_requisiti_tipo.png, id=608, 529.98pt x 402.50375pt>
+<immagini/../immagini/chart_requisiti_tipo.png, id=607, 529.98pt x 402.50375pt>
 File: immagini/../immagini/chart_requisiti_tipo.png Graphic file (type png)
 <use immagini/../immagini/chart_requisiti_tipo.png>
 Package pdftex.def Info: immagini/../immagini/chart_requisiti_tipo.png used on 
@@ -2157,48 +2158,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--5
  <./immagini/../immagini/chart_requisiti_importanza.png> <./immagini/../immagin
 i/chart_requisiti_tipo.png>]
 Capitolo 6.
-Package csquotes Info: Input encoding change on input line 28.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [29
+[29
 
 ]
-Package csquotes Info: Input encoding change on input line 75.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+Package csquotes Info: Input encoding change on input line 29.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [30]
-Package csquotes Info: Input encoding change on input line 87.
+Package csquotes Info: Input encoding change on input line 78.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (4.00003pt too wide) in paragraph at lines 105--109
+Package csquotes Info: Input encoding change on input line 90.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+)
+Overfull \hbox (4.00003pt too wide) in paragraph at lines 108--112
 []\T1/SourceCodePro-TLF/m/n/10 loadTemplateWithJQueryPlugins(tmlUrl, da-taUrl, 
 lib-sUrl, tm-
  []
 
-[31]
-Package csquotes Info: Input encoding change on input line 113.
+[31] [32]
+Package csquotes Info: Input encoding change on input line 116.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 121.
+(Font)              scaled to size 9.0pt on input line 124.
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--133
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
-Package csquotes Info: Input encoding change on input line 143.
+Package csquotes Info: Input encoding change on input line 146.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [32] [33])
-(./capitoli/capitolo-7.tex [34]
-Capitolo 7.
-[35
+) [33] [34])
+(./capitoli/capitolo-7.tex [35] [36
 
 ]
+Capitolo 7.
+[37]
 Package csquotes Info: Input encoding change on input line 26.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
@@ -2210,17 +2212,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--47
 Package csquotes Info: Input encoding change on input line 47.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [36]
+) [38]
 Package csquotes Info: Input encoding change on input line 88.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [37]
+) [39]
 Package csquotes Info: Input encoding change on input line 115.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [38]
+) [40]
 Package csquotes Info: Input encoding change on input line 154.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
@@ -2230,14 +2232,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--171
 
  []
 
-[39] <immagini/../immagini/color_picker.png, id=837, 283.0575pt x 167.62625pt>
+[41] <immagini/../immagini/color_picker.png, id=844, 283.0575pt x 167.62625pt>
 File: immagini/../immagini/color_picker.png Graphic file (type png)
 
 <use immagini/../immagini/color_picker.png>
 Package pdftex.def Info: immagini/../immagini/color_picker.png used on input li
 ne 187.
 (pdftex.def)             Requested size: 283.0568pt x 167.62582pt.
- [40 <./immagini/../immagini/color_picker.png>]
+ [42 <./immagini/../immagini/color_picker.png>]
 Package csquotes Info: Input encoding change on input line 193.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
@@ -2246,9 +2248,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--248
 
  []
 
-[41]) (./capitoli/capitolo-8.tex [42]
+[43]) (./capitoli/capitolo-8.tex [44]
 Capitolo 8.
-<immagini/../immagini/screenshot_app.png, id=899, 1284.8pt x 598.235pt>
+<immagini/../immagini/screenshot_app.png, id=906, 1284.8pt x 598.235pt>
 File: immagini/../immagini/screenshot_app.png Graphic file (type png)
 
 <use immagini/../immagini/screenshot_app.png>
@@ -2260,9 +2262,9 @@ Overfull \hbox (26.28389pt too wide) in paragraph at lines 16--17
  [][] 
  []
 
-[43
+[45
 
- <./immagini/../immagini/screenshot_app.png>]) [44] [45] [46
+ <./immagini/../immagini/screenshot_app.png>]) [46] [47] [48
 
 ]
 No file tesi.gls.
@@ -2271,7 +2273,7 @@ No file tesi.acr.
 
 LaTeX Warning: Empty bibliography on input line 11.
 
-) [47]
+) [49]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./tesi.aux)
@@ -2291,13 +2293,13 @@ Package logreq Info: Writing requests to 'tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34793 strings out of 493089
- 613096 string characters out of 6134842
- 1361569 words of memory out of 5000000
- 36735 multiletter control sequences out of 15000+600000
- 37651 words of font info for 150 fonts, out of 8000000 for 9000
+ 34794 strings out of 493089
+ 613120 string characters out of 6134842
+ 1362575 words of memory out of 5000000
+ 36734 multiletter control sequences out of 15000+600000
+ 37712 words of font info for 150 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 62i,10n,85p,1792b,2410s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,85p,1792b,1795s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/sourcecodepro/a_mqb3sg.enc}
 </usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodeP
@@ -2325,10 +2327,10 @@ live/2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tesi.pdf (57 pages, 1396376 bytes).
+Output written on tesi.pdf (59 pages, 1444500 bytes).
 PDF statistics:
- 1358 PDF objects out of 1440 (max. 8388607)
- 1235 compressed objects within 13 object streams
- 551 named destinations out of 1000 (max. 500000)
+ 1366 PDF objects out of 1440 (max. 8388607)
+ 1242 compressed objects within 13 object streams
+ 553 named destinations out of 1000 (max. 500000)
  38610 words of extra memory for PDF output out of 42996 (max. 10000000)
 

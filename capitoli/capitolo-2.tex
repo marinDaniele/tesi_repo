@@ -64,11 +64,11 @@ Lista della spesa:
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=\textwidth/2]{../immagini/mustache_logo}
+	\includegraphics[scale=0.44]{../immagini/mustache_logo_2}
 	\caption{Logo  Mustache}
 \end{figure}
 
-Mustache può essere considerato come il padre dei template system, è open-souce e logic-less e presenta implementazioni per i più famosi linguaggi di programmaione, come Java, Phyton, Ruby, PHP, JavaScript e molti altri.\\
+Mustache può essere considerato come il padre dei template system, è open-source e logic-less e presenta implementazioni per i più famosi linguaggi di programmazione, come Java, Phyton, Ruby, PHP, JavaScript e molti altri.\\
 Mustache.js è un implementazione per JavaScript del template system Mustache.\\
 La libreria è molto leggera e versatile visto che permette il rendering sia lato server che lato client.\\
 Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano di creare la stringa HTML contenente il template renderizzato partendo dai dati JSON e dal template HTML e la seconda è opzionale e permette di preparare il template in modo da velocizzare l'operazione di render.\\
@@ -80,7 +80,7 @@ La stringa risultante deve essere inserita all'interno della pagina tramite mani
 Sfortunatamente Mustache.js non offre strumenti per la manipolazione del DOM per cui l'inserimento dovrà essere fatto dal programmatore utilizzando funzioni offerte dallo standard JavaScript o da altre librerie come JQuery.
 \subsection{Pregi e difetti}
 Uno dei pregi principali è sicuramente la semplicità e la leggerezza della libreria.\\
-Inoltre la stesura dei template risulta intuitiva e semplificata dall'assenza di costrutti \textit{if-else} o cicli \textit{for} .\\
+Inoltre la stesura dei template risulta intuitiva e semplificata dall'assenza di costrutti \textit{if-else} o cicli \textit{for}.\\
 Come contro si può citare l'impossibilità di creare funzioni aggiuntive per la gestione dei template, possibilità offerta da altre librerie e la totale mancanza di strumenti per la manipolazione del DOM e dei dati del template che costringe il programmatore ad appoggiarsi ad altre librerie.\\
 I template una volta renderizzati sono statici e un cambiamento nei dati non ha effetto sulla loro rappresentazione.
 
@@ -93,7 +93,7 @@ I template una volta renderizzati sono statici e un cambiamento nei dati non ha 
 	\caption{Logo  HandlebarsJS}
 \end{figure}
 
-HandlebarsJS è una libreria costruita sopra a Mustache quindi offre tutte le funzionalità di quest'ultimo e aggiunge al normale set di tag anche costrutti di controllo come l'espressione \textit{if} e iteratori come \textit{each}.\\
+HandlebarsJS è una libreria costruita sopra a Mustache quindi offre tutte le funzionalità di quest'ultimo e aggiunge al normale set di \textit{tag} anche costrutti di controllo come l'espressione \textit{if} e iteratori come \textit{each}.\\
 La libreria offre anche un set di metodi globali che permettono al programmatore di effettuare varie operazioni sul template e i suoi dati, in più la possibilità di creare delle funzioni personalizzate che possono essere inserite in uno spazio globale e riutilizzate a piacere su diversi template.\\
 Handlebare permette di precompilare il template e offre prestazioni migliori rispetto a Mustache.
 \subsection{Come funziona}
@@ -114,7 +114,7 @@ Come Mustache i template una volta creati sono statici e una modifica dei dati n
 	\caption{Logo Ractive.js}
 \end{figure}
 
-Ractive.js è una libreria sviluppata al \href{https://www.theguardian.com}{theguardian.com} per creare \textbf{reactive interface} per il web, in modo semplice e efficente.\\
+Ractive.js è una libreria sviluppata al \href{https://www.theguardian.com}{theguardian.com} per creare \textbf{reactive interface} per il web, in modo semplice e efficiente.\\
 Questa libreria utilizza la sintassi mustache al pari delle librerie viste in precedenza, quindi un template scritto per funzionare con Mustache.JS o HandlebarsJS può essere utilizzato anche con Ractive.js.\\
 Ractive.js arricchisce la sintassi mustache con nuovi strumenti come:
 \begin{itemize}
@@ -127,7 +127,7 @@ Ractive.js arricchisce la sintassi mustache con nuovi strumenti come:
 Oltre all'estensione della sintassi mustache, Ractive.js offre un set molto variegato di opzioni e metodi che possono essere utilizzati per modificare sia il DOM del template che i suoi dati,  per l'emissione e la ricezione di segnali e la gestione di animazioni.\\
 Tutti questi strumenti permettono la realizzazione di template interattivi e di una certa complessità, cosa che non è possibile fare utilizzando le librerie precedentemente descritte.\\
 La libreria è compatibile con tutti i browsers e offre un'ottima compatibilità con SVG e lo standard ES15.\\
-I template ottenuti con Ractive.js  offrono un \textit{binding} tra la rappresentazione del template e  il data model, quando i dati vengono modificati la libreria modifica in modo intelligente ed efficente il DOM del tempalte.
+I template ottenuti con Ractive.js  offrono un \textit{binding} tra la rappresentazione del template e  il data model, quando i dati vengono modificati la libreria modifica in modo intelligente ed efficiente il DOM del tempalte.
 
 \subsection{Come funziona}
 Ractive.js utilizza un approccio differente rispetto alle librerie viste in precedenza.\\
@@ -143,7 +143,7 @@ Questa operazione viene effettuata  nella RAM confrontando la rappresentazione v
 I pregi di questa libreria risiedono nel fatto che offre un insieme completo di strumenti che permettono di gestire l'intero ciclo di vita di un template.\\
 L'arricchimento degli strumenti relativi alla sintassi mustache permette di inserire nel template campi che possono essere risultato di espressioni ed andare a variare sia i dati rappresentati che elementi del CSS, questo permette di creare template che cambiano dinamicamente in base al variare dei dati anche nell'aspetto grafico.\\
 Inoltre la possibilità di creare template che racchiudano HTML, CSS, e comportamento all'interno di un unico file, risulta molto comodo nello sviluppo di quest'ultimi.\\  
-Come contro, in relazione alle librerie viste in precedenza si può citare il peso maggiore in termini di risorse e la quantità di tempo neccessaria ad apprendere il funzionamento della libreria.
+Come contro, in relazione alle librerie viste in precedenza si può citare il peso maggiore in termini di risorse e la quantità di tempo necessario ad apprendere il funzionamento della libreria.
 
 
 %\clearpage

@@ -35,26 +35,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {6.1}Esempio di template mustache restituito.}{30}{lstlisting.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {6.2}Esempio di oggetto JSON restituito.}{30}{lstlisting.6.2}
+\contentsline {lstlisting}{\numberline {6.2}Esempio di oggetto JSON restituito.}{31}{lstlisting.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {6.3}Esempio di oggetto JSON restituito.}{31}{lstlisting.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {6.4}Esempio array \texttt {libs}.}{32}{lstlisting.6.4}
+\contentsline {lstlisting}{\numberline {6.4}Esempio array \texttt {libs}.}{33}{lstlisting.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {6.5}Struttura oggetto \texttt {templatesToLoad}.}{32}{lstlisting.6.5}
+\contentsline {lstlisting}{\numberline {6.5}Struttura oggetto \texttt {templatesToLoad}.}{33}{lstlisting.6.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.1}Chiamate \textit {GET HTTP} per il caricamento delle risorse.}{36}{lstlisting.7.1}
+\contentsline {lstlisting}{\numberline {7.1}Chiamate \textit {GET HTTP} per il caricamento delle risorse.}{38}{lstlisting.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.2}Codice per l'aggiunta delle librerie pi\IeC {\`u} esempio di JSON e risultato ottenuto.}{36}{lstlisting.7.2}
+\contentsline {lstlisting}{\numberline {7.2}Codice per l'aggiunta delle librerie pi\IeC {\`u} esempio di JSON e risultato ottenuto.}{38}{lstlisting.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.3}Funzione che gestisce il caricamento di una libreria.}{37}{lstlisting.7.3}
+\contentsline {lstlisting}{\numberline {7.3}Funzione che gestisce il caricamento di una libreria.}{39}{lstlisting.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.4}Implementazione \texttt {loadTemplateList().}}{38}{lstlisting.7.4}
+\contentsline {lstlisting}{\numberline {7.4}Implementazione \texttt {loadTemplateList().}}{40}{lstlisting.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.5}Chiamata di \texttt {selectTml()} all'evento \texttt {onclick} del list item.}{39}{lstlisting.7.5}
+\contentsline {lstlisting}{\numberline {7.5}Chiamata di \texttt {selectTml()} all'evento \texttt {onclick} del list item.}{41}{lstlisting.7.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.6}Estratto della funzione \texttt {parse()}}{41}{lstlisting.7.6}
+\contentsline {lstlisting}{\numberline {7.6}Estratto della funzione \texttt {parse()}}{43}{lstlisting.7.6}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}

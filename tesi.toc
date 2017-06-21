@@ -112,44 +112,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1.1}Accesso alle risorse}{29}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}{29}{section*.24}
+\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.html}{30}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.json}{30}{section*.25}
+\contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}.json}{31}{section*.25}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{GET /templates/\{tipo+indice\}/\{tipo+indice\}\_libs.json}{31}{section*.26}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.2}Caricamento template}{31}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Creazione lista template}{32}{section.6.3}
+\contentsline {section}{\numberline {6.3}Creazione lista template}{33}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{33}{section.6.4}
+\contentsline {section}{\numberline {6.4}Visualizzazione template selezionato}{34}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{33}{section.6.5}
+\contentsline {section}{\numberline {6.5}Editor per la modifica del template}{34}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Realizzazione}{35}{chapter.7}
+\contentsline {chapter}{\numberline {7}Realizzazione}{37}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Il caricamento dei template}{35}{section.7.1}
+\contentsline {section}{\numberline {7.1}Il caricamento dei template}{37}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.1}Controllo delle librerie caricate}{37}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.1}Controllo delle librerie caricate}{39}{subsection.7.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Visualizzatore lista template}{37}{section.7.2}
+\contentsline {section}{\numberline {7.2}Visualizzatore lista template}{39}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Visualizzatore template selezionato}{38}{section.7.3}
+\contentsline {section}{\numberline {7.3}Visualizzatore template selezionato}{40}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Editor per la manipolazione del template}{39}{section.7.4}
+\contentsline {section}{\numberline {7.4}Editor per la manipolazione del template}{41}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.1}Creazione dell'editor}{39}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.1}Creazione dell'editor}{41}{subsection.7.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.2}Modifica dei dati}{42}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.2}Modifica dei dati}{44}{subsection.7.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.4.3}Controllo degli input}{42}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.3}Controllo degli input}{44}{subsection.7.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusioni}{43}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusioni}{45}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{43}{section.8.1}
+\contentsline {section}{\numberline {8.1}Valutazione del risultato e di Ractive.js}{45}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{44}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.1}Requisiti soddisfatti}{46}{subsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{44}{section.8.2}
+\contentsline {section}{\numberline {8.2}Criticit\IeC {\`a}}{46}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{44}{section.8.3}
+\contentsline {section}{\numberline {8.3}Conoscenze acquisite}{46}{section.8.3}
