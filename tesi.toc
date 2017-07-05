@@ -126,7 +126,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.5}Editor per la modifica del template}{34}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Realizzazione}{37}{chapter.7}
+\contentsline {chapter}{\numberline {7}Implementazione}{37}{chapter.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}Il caricamento dei template}{37}{section.7.1}
 \defcounter {refsection}{0}\relax 

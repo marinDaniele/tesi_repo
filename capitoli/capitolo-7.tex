@@ -4,10 +4,10 @@
 % !TEX spellcheck = it-IT
 
 %**************************************************************
-\chapter{Realizzazione}
-\label{cap:realizzazione}
+\chapter{Implementazione}
+\label{cap:implementazione}
 In questo capitolo vengono descritte le attività svolte durante lo sviluppo dell'applicazione e le principali difficoltà riscontrate.\\
-Per lo sviluppo dell'applicazione sono state utilizzate, riadattandole, anche soluzioni sviluppate durante la fase di studio sui template, in particolare quelle relative al caricamento dei template e alla gestione delle librerie JQuery.\\
+Per lo sviluppo dell'applicazione sono state utilizzate, riadattandole, anche soluzioni sviluppate durante la fase di studio sui template, in particolare quelle relative al caricamento dei template e alla gestione delle librerie jQuery.\\
 Durante questa fase il lavoro svolto è stato proposto al tutor aziendale in più riprese perché ne verificasse il comportamento e proponesse eventuali modifiche.
 %**************************************************************
 
@@ -19,8 +19,8 @@ Il caricamento dei template consiste in tre fasi, che sono:
 	\item rendering del template all'interno di un elemento HTML.
 \end{itemize}
 Per effettuare il caricamento delle risorse sono stati utilizzati due metodi differenti in base al tipo di file da caricare.\\
-Il caricamento degli oggetti di tipo JSON, come i dati e l'elenco delle librerie JQuery del template, è stato effettuato tramite un metodo offerto dalla libreria JQuery, che permette di effettuare una \textit{GET HTTP request} per il caricamento specifico di oggetti JSON.\\
-Il metodo in questione è \href{http://api.jquery.com/jquery.getjson/}{\texttt{jQuery.getJSON()}} che effettua una \textit{callback} ad un URL e ritorna l'oggetto desiderato.\\
+Il caricamento degli oggetti di tipo JSON, come i dati e l'elenco delle librerie jQuery del template, è stato effettuato tramite un metodo offerto dalla libreria jQuery, che permette di effettuare una \textit{GET HTTP request} per il caricamento specifico di oggetti JSON.\\
+Il metodo in questione è \href{http://api.jquery.com/jquery.getjson/}{\texttt{JQuery.getJSON()}} che effettua una \textit{callback} ad un URL e ritorna l'oggetto desiderato.\\
 Per effettuare il caricamento del template mustache invece, la comunità di Ractive offre un plug-in chiamato \texttt{ractive-load}\footnote{\url{https://github.com/ractivejs/ractive-load}} che aggiunge un metodo statico alla libreria e permette, tramite la  \textit{promise}\footnote{\url{http://www.ecma-international.org/ecma-262/6.0/\#sec-promise-objects}} \texttt{Ractive.load()} di effettuare il caricamento del file contenente la definizione del template utilizzando \textit{GET HTTP request}.
 \newpage
 \begin{lstlisting}[language=JavaScript, caption=Chiamate \textit{GET HTTP} per il caricamento delle risorse.]
@@ -42,7 +42,7 @@ $.getJSON(dataUrl, function(dati) { // se il caricamento ha successo
 });
 \end{lstlisting}
 Le richieste vengono eseguite in modo asincrono, quindi solamente l'esito positivo della prima \textit{callback} permette l'esecuzione della chiamata a \texttt{Ractive.load()} e l'eventuale istanziazione dell'oggetto \textit{Ractive}.\\
-Per quanto riguarda il caricamento di template contenenti plug-in JQuery, il metodo è identico, ma prima di caricare i dati ed il template devono essere caricate le librerie.\\
+Per quanto riguarda il caricamento di template contenenti plug-in jQuery, il metodo è identico, ma prima di caricare i dati ed il template devono essere caricate le librerie.\\
 Il caricamento delle librerie viene effettuato tramite \texttt{JQuery.getJSON()} del file contenente la lista delle librerie e aggiungendo le URL di quest'ultime all'\texttt{header} dell'applicazione tramite la creazione di un tag \texttt{script} per ogni libreria individuata.\\
 \begin{lstlisting}[language=JavaScript, caption=Codice per l'aggiunta delle librerie più esempio di JSON e risultato ottenuto.]
 // carico le librerie del template
@@ -75,13 +75,13 @@ $.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
 </head>
 
 \end{lstlisting}
-Per i template con plug-in JQuery il problema principale è quello che il template venga renderizzato prima del caricamento delle librerie, questo comporta il non riconoscimento delle funzioni che si riferiscono al plug-in rendendo il template incompleto.\\
+Per i template con plug-in jQuery il problema principale è quello che il template venga renderizzato prima del caricamento delle librerie, questo comporta il non riconoscimento delle funzioni che si riferiscono al plug-in rendendo il template incompleto.\\
 Quindi il caricamento delle librerie viene eseguito sempre prima di caricare gli altri elementi del template.\\
 Nonostante questa accortezza risulta impossibile verificare l'effettivo caricamento da parte del \textit{browser} delle librerie perché esso viene effettuato in modo asincrono.\\
 Questo problema può essere risolto in maniera semplice con un \textit{reload} della pagina o come è stato fatto in un fork dell'applicazione tramite un \textit{preload} di tutte le librerie, che però risulta una soluzione molto onerosa e in certi casi non risolve il problema.
 
 \subsection{Controllo delle librerie caricate}
-Uno dei problemi che è sorto durante lo sviluppo in relazione al caricamento delle librerie per i template con plug-in JQuery, è quello di effettuare il caricamento di una o più librerie già caricate in precedenza.\\
+Uno dei problemi che è sorto durante lo sviluppo in relazione al caricamento delle librerie per i template con plug-in jQuery, è quello di effettuare il caricamento di una o più librerie già caricate in precedenza.\\
 Questo comporta la manipolazione inutile del \textit{DOM}, quindi una quantità maggiore di carico per il \textit{browser}.\\
 Il problema è stato risolto effettuando un controllo tramite l'implementazione della funzione \texttt{confrontaScript()} che utilizza il metodo \texttt{document.scripts} per ricavare la lista delle librerie caricate dall'applicazione e tramite un confronto con essa decide se sia necessario aggiungere la nuova libreria o meno.\\
 Questa funzione viene invocata dalla funzione \texttt{addLibraryFromUrl()} per ogni URL presente nel JSON, ogni qual volta venga caricato un template contenente plug-in.
@@ -181,7 +181,7 @@ Il problema della rilevazione dei tipi non primitivi è stato risolto tramite il
 	\item \textbf{immagine}, rappresentato come url a risorse di tipo immagine nei formati \textit{jpg, jpeg, png, gif} e \textit{svg}.
 \end{itemize}
 Nel caso in cui il tipo rilevato sia un immagine viene costruito un input di tipo \textit{input-file} che permette il caricamento di un immagine da file-system.\\
-Mentre per il tipo \textbf{colore} è stato utilizzato il plug-in JQuery \href{http://jscolor.com/}{jscolor}, che permette di visualizzare il colore e propone un utile \textit{color-picker} per effettuarne la modifica.\\
+Mentre per il tipo \textbf{colore} è stato utilizzato il plug-in jQuery \href{http://jscolor.com/}{jscolor}, che permette di visualizzare il colore e propone un utile \textit{color-picker} per effettuarne la modifica.\\
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=1]{../immagini/color_picker}

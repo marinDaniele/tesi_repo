@@ -16,9 +16,9 @@ Ad ogni directory e alle risorse principali in esse contenute è stato assegnato
 Le quattro categorie vengono nominate come segue:
 \begin{itemize}
 	\item \textbf{tml} identifica i template di tipo semplici;
-	\item \textbf{jtml} identifica i template di tipo semplici contenenti plug-in JQuery;
+	\item \textbf{jtml} identifica i template di tipo semplici contenenti plug-in jQuery;
 	\item \textbf{ctml} identifica i template di tipo composti;
-	\item \textbf{jctml} identifica i template di tipo composti contenenti plug-in JQuery.
+	\item \textbf{jctml} identifica i template di tipo composti contenenti plug-in jQuery.
 \end{itemize}
 \subsection{Accesso alle risorse}
 Le risorse necessarie sono reperibili tramite chiamata \textit{http-get} ad un URL nella forma \texttt{/templates/\{tipo+indice\}/\{tipo+indice\}.estensione}, dove \texttt{tipo} è uno dei quattro tipi descritti in precedenza, \texttt{indice} è il numero che identifica il template.
@@ -102,17 +102,17 @@ Il caricamento di un template consiste nel reperire le risorse principali ad ess
 Per effettuare questa operazione sono state definite le seguenti funzioni:
 \begin{itemize}
 	\item \texttt{loadTemplateWithoutJQuery(tmlUrl, dataUrl, tmlAnchor)}\\
-	Questa funzione si occupa del caricamento e del rendering dei template che \textit{non contengono} plug-in JQuery.\\
+	Questa funzione si occupa del caricamento e del rendering dei template che \textit{non contengono} plug-in jQuery.\\
 	La funzione recupera le risorse da \texttt{tmlUrl} e \texttt{dataUrl}, crea un'istanza \textit{Ractive} che rappresenta il template e lo renderizza all'interno dell'elemento HTML con id \texttt{tmlAnchor}.
 	
 	\item \texttt{loadTemplateWithJQueryPlugins(tmlUrl, dataUrl, libsUrl, tmlAnchor)}\\
-	Questa funzione si occupa del caricamento e del rendering dei template che \textit{contengono} plug-in JQuery.\\
-	La funzione recupera la lista delle librerie JQuery del template da \texttt{libsUrl} e usa la funzione \texttt{loadLibs} per gestire il loro caricamento.\\
+	Questa funzione si occupa del caricamento e del rendering dei template che \textit{contengono} plug-in jQuery.\\
+	La funzione recupera la lista delle librerie jQuery del template da \texttt{libsUrl} e usa la funzione \texttt{loadLibs} per gestire il loro caricamento.\\
 	In seguito recupera le risorse da \texttt{tmlUrl} e \texttt{dataUrl}, crea un'istanza \textit{Ractive} che rappresenta il template e lo renderizza all'interno dell'elemento HTML con id \texttt{tmlAnchor}.
 	
 	\newpage
 	\item \texttt{loadLibs(libs)}\\
-	Questa funzione riceve un \textit{array} di URL relative alle librerie JQuery da caricare e utilizzando la funzione \texttt{addLibraryFromUrl(libUrl)} ne gestisce il caricamento.
+	Questa funzione riceve un \textit{array} di URL relative alle librerie jQuery da caricare e utilizzando la funzione \texttt{addLibraryFromUrl(libUrl)} ne gestisce il caricamento.
 	\begin{lstlisting}[language=JSON, caption=Esempio array \texttt{libs}.]
 	{
 		"libs": [

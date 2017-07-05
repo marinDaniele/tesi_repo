@@ -15,10 +15,10 @@ Negli ultimi anni sono nate molte librerie che permettono la creazione di templa
 Queste librerie si sono evolute velocemente fino ad arrivare a permettere agli sviluppatori di creare intere User interface per applicazioni web, creare componenti riutilizzabili ed in qualche caso offrire funzionalità avanzate come il two-way binding.
 
 \subsection{I template con sintassi mustache}
-Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione del template, tramite l'inserimento di \textbf{tag}.\\
-Questi particolari \textbf{tag} sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).\\
+Le librerie studiate durante lo stage utilizzano tutte questa particolare sintassi, che permette di rappresentare variabili, sezioni, parziali ed altri elementi utili alla creazione del template, tramite l'inserimento di \textit{tag}.\\
+Questi particolari \textit{tag} sono caratterizzati dall'utilizzo delle parentesi graffe come delimitatori e questo è il motivo per cui vengono definiti mustaches (baffi in inglese).\\
 I tag si presentano nella forma "\{\{I P\}\}" dove I è un simbolo o una stringa ed identifica il tipo di tag, mentre P è un parametro o una chiave appartenente all'oggetto JSON correlato al template.\\
-Per l'inserimento di variabili o parziali il \textbf{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri, sono presenti un \textbf{tag} di apertura ed uno di chiusura.\\
+Per l'inserimento di variabili o parziali il \textit{tag} è singolo, mentre per l'inserimento di sezioni, controlli del tipo not-exist ed altri, sono presenti un \textit{tag} di apertura ed uno di chiusura.\\
 Per capire meglio il funzionamento che sta alla base di questi template engine è utile fare degli esempi.
 \newpage
 Questo esempio mostra il rendering di due variabili.
@@ -75,9 +75,9 @@ Le funzioni offerte sono \textit{render} e \textit{parse}, la prima si occupano 
 Mustache.js viene definita logic-less perché non presenta nessun tipo di costrutto \textit{if-then-else} e loop come \textit{for} o \textit{do-while}
 \subsection{Come funziona}
 Il suo funzionamento è molto semplice dato che la libreria offre solamente due metodi.\\
-Il metodo principale è \textit{Mustache.render(data, template)} che prendendo in ingresso il template HTML, con gli opportuni \textbf{tag} mustache, e i dati tramite oggetto JSON, restituisce una stringa risultato dall'interpolazione dei due elementi.\\
+Il metodo principale è \textit{Mustache.render(data, template)} che prendendo in ingresso il template HTML, con gli opportuni \textit{tag} mustache, e i dati tramite oggetto JSON, restituisce una stringa risultato dall'interpolazione dei due elementi.\\
 La stringa risultante deve essere inserita all'interno della pagina tramite manipolazione del DOM.\\
-Sfortunatamente Mustache.js non offre strumenti per la manipolazione del DOM per cui l'inserimento dovrà essere fatto dal programmatore utilizzando funzioni offerte dallo standard JavaScript o da altre librerie come JQuery.
+Sfortunatamente Mustache.js non offre strumenti per la manipolazione del DOM per cui l'inserimento dovrà essere fatto dal programmatore utilizzando funzioni offerte dallo standard JavaScript o da altre librerie come jQuery.
 \subsection{Pregi e difetti}
 Uno dei pregi principali è sicuramente la semplicità e la leggerezza della libreria.\\
 Inoltre la stesura dei template risulta intuitiva e semplificata dall'assenza di costrutti \textit{if-else} o cicli \textit{for}.\\
