@@ -75,7 +75,7 @@ $.getJSON(libsUrl, function(libs) { // se il caricamento ha successo
 </head>
 
 \end{lstlisting}
-Per i template con plug-in jQuery il problema principale è quello che il template venga renderizzato prima del caricamento delle librerie, questo comporta il non riconoscimento delle funzioni che si riferiscono al plug-in rendendo il template incompleto.\\
+Per i template con plug-in jQuery il problema principale è che il template venga renderizzato prima del caricamento delle librerie, questo comporta il non riconoscimento delle funzioni che si riferiscono al plug-in rendendo il template incompleto.\\
 Quindi il caricamento delle librerie viene eseguito sempre prima di caricare gli altri elementi del template.\\
 Nonostante questa accortezza risulta impossibile verificare l'effettivo caricamento da parte del \textit{browser} delle librerie perché esso viene effettuato in modo asincrono.\\
 Questo problema può essere risolto in maniera semplice con un \textit{reload} della pagina o come è stato fatto in un fork dell'applicazione tramite un \textit{preload} di tutte le librerie, che però risulta una soluzione molto onerosa e in certi casi non risolve il problema.

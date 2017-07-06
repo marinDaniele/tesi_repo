@@ -5,7 +5,7 @@
 
 %**************************************************************
 \chapter{I template}\label{cap:template}
-In questo capitolo viene descritto il lavoro svolto nella prima parte del progetto, che consiste nella realizzazione dei template, nel spiegare come sono stati resi responsive ed in fine come sia stato possibile inserire \textit{plug-in} jQuery al loro interno.\\
+In questo capitolo viene descritto il lavoro svolto nella prima parte del progetto, che consiste nella realizzazione dei template, nello spiegare come sono stati resi responsive ed in fine come sia stato possibile inserire \textit{plug-in} jQuery al loro interno.\\
 Viene anche trattato l'argomento relativo al loro caricamento all'interno della pagina HTML e la gestione delle librerie.
 %**************************************************************
 \section{Utilizzo di Ractive.js}
@@ -44,7 +44,7 @@ Le opzioni principali sono:
 	\item \textbf{compute}: oggetto che può contenere espressioni o funzioni che verranno ricalcolate al variare del data model;
 \end{itemize}
 
-\subsection{Il two-way data biding}
+\subsection{Il two-way data binding}
 La libreria fornisce la funzionalità di one-way-binding tra i dati contenuti nel data registry e il virtual DOM, cioè al variare del model il virtual DOM e di conseguenza anche la sua rappresentazione nel browser vengono modificate.\\
 Oltre a questo tipo di legame, la libreria offre, per elementi di input , il two-way-binding, che permette di modificare il model al variare dei dati nella view e viceversa.
 \begin{figure}[htp]
@@ -69,7 +69,7 @@ Agli sviluppatori è data la possibilità di creare i propri \textit{plug-in} o 
 Durante lo sviluppo del progetto sono stati utilizzati i \textit{plug-in} \href{https://github.com/ractivejs/ractive-events-tap}{ractive-events-tap}, per gestire il click/tap sui dispositivi mobili , e \href{https://github.com/ractivejs/ractive-load}{ractive-load}, per il caricamento tramite protocollo \textit{http} dei template.   
 
 \section{Sviluppo dei template}
-La creazione dei template, per il progetto, non presentava nessuna restrizione né per la forma né per i contenuti, quindi la decisione di quali template sviluppare era a discrezione del programmatore.\\
+La creazione dei template, per il progetto, non presentava nessuna restrizione né per la forma né per i contenuti, quindi la decisione su quali template sviluppare era a discrezione del programmatore.\\
 L'unica richiesta, per questa fase del progetto, è stata quella di avere template sia HTML che SVG.\\
 \subsection{Struttura dei template} \label{sec:sviluppo_template}
 I template HTML sono strutturati come una pagina web, cioè sono formati dal codice HTML per quanto riguarda i contenuti, il codice CSS per la loro rappresentazione grafica e JavaScript per definire il loro comportamento.\\
@@ -226,7 +226,7 @@ L'utilizzo di plug-in jQuery implica:
 	\item la stesura di uno script JavaScript che va a richiamare le funzionalità desiderate tra quelle offerte dal plug-in.
 \end{itemize}
 Questo particolare script deve essere eseguito in seguito al caricamento del template all'interno della pagina.\\
-La soluzione individuata per avere template che contengano plag-in jQuery consiste nell'inserire lo script per il funzionamento del plug-in come implementazione dell'opzione \textit{oncomplete} dell'oggetto Ractive.\\
+La soluzione individuata per avere template che contengano plug-in jQuery consiste nell'inserire lo script per il funzionamento del plug-in come implementazione dell'opzione \textit{oncomplete} dell'oggetto Ractive.\\
 L'opzione \textit{oncomplete} fa parte dei \textit{lifecycle events} di Ractive e viene richiamata nel momento in cui il template è stato completamente renderizzato.\\
 Questa soluzione oltre a permettere l'inserimento dello script all'interno del file del template, assicura che la sua esecuzione avvenga in maniera corretta.\\
 In seguito viene riportato un esempio di implementazione dell'opzione \textit{oncomplete} per l'utilizzo di un plug-in jQuery.
@@ -248,7 +248,7 @@ Queste funzioni si distinguono per il tipo di template che devono caricare, cio�
 \begin{itemize}
 	\item caricamento di template senza plug-in jQuery;
 	\item caricamento di template con plug-in jQuery e script di attivazione del plug-in all'interno del file del template;
-	\item caricamento di template con plug-in jQuery e script di attivazione del plug-in come file esterno al file del template;
+	\item caricamento di template con plug-in jQuery e script di attivazione del plug-in come file esterno al file del template.
 \end{itemize} 
 Quest'ultimo caso è stato inserito per dare una possibilità in più nello sviluppo dei template, anche se non risulta essere la scelta migliore.\\
 Queste funzioni ,una volta ottenuto il nome del template da caricare, si occupano di effettuare una richiesta \textit{http-get} per ottenere i vari componenti del template.\\
@@ -299,7 +299,7 @@ this.addLibraryFromUrl = function(url) {
 \end{lstlisting}
 
 \subsection{Problemi riscontrati} \label{subsec: problemi_lib}
-Un problema che è stato rilevato, a riguardo del caricamento di template che utilizzano jQuery consiste nel fatto che il browser effettua il caricamento delle librerie in modo asincrono, quindi non gestibile da parte dello sviluppatore.\\
+Un problema che è stato rilevato, riguardante il caricamento di template che utilizzano jQuery consiste nel fatto che il browser effettua il caricamento delle librerie in modo asincrono, quindi non gestibile da parte dello sviluppatore.\\
 Nel caso in cui la libreria non sia ancora stata caricata prima dell'avvenuto rendering del template, si verifica un errore perché le funzioni richiamate non vengono riconosciute.\\
 Il problema riscontrato sarebbe risolvibile se fosse possibile rilevare l'avvenuto caricamento delle risorse richieste, ma momentaneamente i browser non offrono strumenti adeguati.\\
 Una delle possibili soluzioni è quella di effettuare il \textit{reload} della pagina una volta che questa è stata completamente caricata.
