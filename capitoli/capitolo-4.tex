@@ -152,7 +152,7 @@ Il file contiene anche l'implementazione dell'opzione \textit{computed} fornita 
 Tramite il metodo \textit{export} di component è possibile definire la logica del template utilizzando le opzioni e i metodi forniti dalla libreria Ractive.js.\\
 In questo caso viene indicato che ogni volta che il prezzo subisce modifiche questo deve essere convertito in una stringa e rappresentato con due decimali.
 
-\begin{lstlisting}[language=JavaScript, caption=Implementazione ed esportazione opzione computed.]
+\begin{lstlisting}[language=JavaScript, caption=Implementazione ed esportazione opzione \textit{computed}.]
 component.exports = {
 	computed: {
 		prezzoCent: function(){
@@ -167,7 +167,7 @@ Al template viene fornito un oggetto JSON contenente dei dati di default, utiliz
 Questi dati sono contenuti in un file con estensione \textit{.json} presente all'interno della directory del template.\\
 L'oggetto JSON è definito come segue.
 
-\begin{lstlisting}[language=JavaScript, caption=Rappresentazione dell'oggetto JSON.]
+\begin{lstlisting}[language=JSON, caption=Rappresentazione dell'oggetto JSON.]
 {
 	"bgColor":"#ededed",
 	"textColor":"#000000",

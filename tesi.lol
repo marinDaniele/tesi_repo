@@ -19,7 +19,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.4}Condizione if-else con mustache.}{18}{lstlisting.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.5}Implementazione ed esportazione opzione computed.}{18}{lstlisting.4.5}
+\contentsline {lstlisting}{\numberline {4.5}Implementazione ed esportazione opzione \textit {computed}.}{18}{lstlisting.4.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.6}Rappresentazione dell'oggetto JSON.}{18}{lstlisting.4.6}
 \defcounter {refsection}{0}\relax 
